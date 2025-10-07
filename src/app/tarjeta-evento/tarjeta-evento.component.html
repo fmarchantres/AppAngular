@@ -1,0 +1,40 @@
+<app-plantilla>
+
+  <!-- Título del evento -->
+  <div>
+    <p class="titulo_eventos">{{ titulo }}</p>
+  </div>
+
+  <!-- Imagen del evento -->
+  <div>
+    <img [src]="imagen" alt="{{ titulo }}" class="imagen_evento">
+  </div>
+
+  <!-- Información del evento -->
+  <div class="info-evento">
+    <ul>
+      <li *ngFor="let item of info">
+        {{ item.icono }} <strong>{{ item.etiqueta }}:</strong> {{ item.valor }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Checkbox opcional -->
+  <div class="checkbox-container" *ngIf="mostrarCheckbox">
+    <ion-item class="checkbox-notificaciones" lines="none">
+      <ion-checkbox slot="start" [(ngModel)]="recibirNotificaciones"></ion-checkbox>
+      <ion-label>¿Quieres recibir notificaciones de cambios?</ion-label>
+    </ion-item>
+  </div>
+
+  <!-- Botones opcionales -->
+  <div *ngIf="mostrarBotones">
+    <div class="boton-interesa">
+      <ion-button expand="block">Me interesa</ion-button>
+    </div>
+    <div class="boton-pagar">
+      <ion-button expand="block">Pagar</ion-button>
+    </div>
+  </div>
+
+</app-plantilla>

@@ -1,0 +1,103 @@
+/* ======== COLORES Y ESTILOS GENERALES ======== */
+ion-content,
+ion-toolbar {
+  --background: #ffffff;
+}
+
+.main_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+}
+
+.logo-img {
+  height: 80px;
+  object-fit: contain;
+}
+
+ion-footer {
+  --background: #ffffff;
+}
+
+/* Sin esto el fondo seguía sin verse blanco */
+ion-tab-bar {
+  --background: #ffffff;
+  --color: #000000;
+  --color-selected: #3880ff;
+}
+
+.icono-footer {
+  width: 28px;
+  height: auto;
+  margin-top: 8px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+ion-tab-button.tab-selected .icono-footer {
+  transform: scale(1.1);
+  filter: brightness(1.3);
+}
+
+/* ======== CENTRADO GENERAL ======== */
+.no-padding {
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+.contenedor-botones {
+  height: calc(100vh - 160px); /* deja espacio para header y footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-grid {
+  width: 100%;
+  max-width: 400px; /* evita que se desmadre en pantallas grandes */
+}
+
+ion-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ======== BOTONES CON IMAGEN Y TEXTO ======== */
+.boton-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.boton-texto {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.custom-btn {
+  --background: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  --ripple-color: rgba(0, 0, 0, 0.2);
+  --ripple-scale: 0.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}

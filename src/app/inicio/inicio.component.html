@@ -1,0 +1,85 @@
+<!-- Cabecera -->
+<ion-header>
+  <ion-toolbar>
+    <div class="main_logo">
+      <img src="assets/main%20logo.png" alt="Logo" class="logo-img">
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Zona de los botones, dividimos en dos filas y cada fila en dos columnas -->
+<ion-content class="ion-padding no-padding">
+  <div class="contenedor-botones">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="boton-wrapper">
+          <p class="boton-texto">Acceder</p>
+          <ion-button fill="clear" class="custom-btn">
+            <img src="assets/icons/login.png" alt="Acceder" />
+          </ion-button>
+        </ion-col>
+
+        <ion-col class="boton-wrapper">
+          <p class="boton-texto">Registrar</p>
+          <ion-button fill="clear" class="custom-btn">
+            <img src="assets/icons/registrar.png" alt="Registrar" />
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="boton-wrapper">
+          <p class="boton-texto">Contacto</p>
+          <ion-button fill="clear" class="custom-btn">
+            <img src="assets/icons/contacto.png" alt="Contacto" />
+          </ion-button>
+        </ion-col>
+
+        <ion-col class="boton-wrapper">
+          <p class="boton-texto">Eventos</p>
+          <ion-button fill="clear" class="custom-btn">
+            <img src="assets/icons/calendario.png" alt="Eventos" />
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+
+
+
+
+
+
+<!-- Footer con 5 botones usando SVG -->
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="home">
+      <img src="assets/icons/home.svg" alt="Home" class="icono-footer">
+      <ion-label></ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="calendar">
+      <img src="assets/icons/calendar.svg" alt="Calendario" class="icono-footer">
+      <ion-label></ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="upload">
+      <img src="assets/icons/upload.svg" alt="Subir" class="icono-footer">
+      <ion-label></ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="phone">
+      <img src="assets/icons/phone.svg" alt="Teléfono" class="icono-footer">
+      <ion-label></ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <img src="assets/icons/profile.svg" alt="Perfil" class="icono-footer">
+      <ion-label></ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-footer>
