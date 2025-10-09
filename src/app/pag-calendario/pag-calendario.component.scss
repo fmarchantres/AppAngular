@@ -1,0 +1,19 @@
+.titulo{
+  text-align: center;
+  color: black;
+  font-weight: bold;
+
+}
+
+
+ion-datetime {
+  display: block;
+  margin: 0 auto;
+  max-width: 350px;
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+ion-datetime.md::part(calendar-day today) {
+  border-color: #8462d1;
+}

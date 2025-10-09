@@ -4,6 +4,7 @@ import {EventosComponent} from "./eventos/eventos.component";
 import {EventoCienciasComponent} from "./evento-ciencias/evento-ciencias.component";
 import {EventoDeportivoComponent} from "./evento-deportivo/evento-deportivo.component";
 import {EventoCulturalComponent} from "./evento-cultural/evento-cultural.component";
+import {PagCalendarioComponent} from "./pag-calendario/pag-calendario.component";
 
 
 export const routes: Routes = [
@@ -31,6 +32,10 @@ export const routes: Routes = [
   {
     path: 'evento-cultural',
     component: EventoCulturalComponent
+  },
+  {
+    path: 'pag-calendario',
+    component: PagCalendarioComponent
   }
 
 

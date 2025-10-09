@@ -1,0 +1,15 @@
+<app-plantilla>
+  <div class="contenido-calendario">
+    <p class="titulo">Calendario</p>
+
+    <ion-datetime
+      presentation="date"
+      [(ngModel)]="datetime"
+      class="calendario"
+    ></ion-datetime>
+
+    <p class="fecha-seleccionada" *ngIf="datetime">
+      Fecha seleccionada: {{ datetime | date:'fullDate' }}
+    </p>
+  </div>
+</app-plantilla>
