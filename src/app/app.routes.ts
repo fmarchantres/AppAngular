@@ -5,6 +5,8 @@ import {EventoCienciasComponent} from "./evento-ciencias/evento-ciencias.compone
 import {EventoDeportivoComponent} from "./evento-deportivo/evento-deportivo.component";
 import {EventoCulturalComponent} from "./evento-cultural/evento-cultural.component";
 import {PagCalendarioComponent} from "./pag-calendario/pag-calendario.component";
+import {PagLoginComponent} from "./pag-login/pag-login.component";
+import {PagRegistroComponent} from "./pag-registro/pag-registro.component";
 
 
 export const routes: Routes = [
@@ -36,7 +38,16 @@ export const routes: Routes = [
   {
     path: 'pag-calendario',
     component: PagCalendarioComponent
+  },
+  {
+    path: 'pag-login',
+    component: PagLoginComponent
+  },
+  {
+    path: 'pag-registro',
+    component: PagRegistroComponent
   }
+
 
 
 
