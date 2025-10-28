@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { NgForm, FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { PlantillaComponent } from "../plantilla/plantilla.component";
 import {
   IonButton,
@@ -11,7 +10,8 @@ import {
   IonInput,
   IonItem,
   IonLabel,
-  IonRow
+  IonRow,
+  ToastController
 } from "@ionic/angular/standalone";
 
 @Component({
@@ -35,13 +35,35 @@ import {
 })
 export class PagLoginComponent {
 
-  // Este método se llamará cuando el usuario haga submit
-  login(form: NgForm) {
+  constructor(
+    private toastController: ToastController,
+    private router: Router
+  ) {}
+
+  // Método para mostrar el mensaje Toast
+  async mostrarToast(mensaje: string, color: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 2000,
+      color: color,
+      position: 'bottom'
+    });
+    await toast.present();
+  }
+
+  // Este método se llama al enviar el formulario
+  async login(form: NgForm) {
     if (form.valid) {
       console.log('Formulario válido', form.value);
-      // Aquí podrías hacer la llamada a tu servicio de autenticación
+      await this.mostrarToast('Inicio de sesión exitoso', 'success');
+
+      // Redirige al inicio después de 1 segundo
+      setTimeout(() => {
+        this.router.navigate(['/inicio']);
+      }, 1000);
     } else {
       console.log('Formulario inválido');
+      this.mostrarToast('Por favor, completa todos los campos', 'warning');
     }
   }
 }

@@ -1,0 +1,52 @@
+<app-plantilla>
+
+  <div class="ion-text-center ion-padding">
+    <p class="titulo">Contacto</p>
+    <p class="descripcion">¿Tienes alguna pregunta o sugerencia?</p>
+  </div>
+
+  <form #form="ngForm" (ngSubmit)="enviarMensaje(form)">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col size-md="6" size-lg="5" size-xs="12">
+
+          <div class="login-card ion-padding">
+            <ion-item>
+              <ion-label position="stacked">Nombre</ion-label>
+              <ion-input name="nombre" type="text" placeholder="Tu nombre" ngModel required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Apellido</ion-label>
+              <ion-input name="apellido" type="text" placeholder="Tu apellido" ngModel></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input name="email" type="email" placeholder="tu@email.com" ngModel required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Mensaje</ion-label>
+              <ion-textarea name="mensaje" placeholder="Escribe tu mensaje aquí" ngModel required></ion-textarea>
+            </ion-item>
+          </div>
+
+          <div class="ion-padding">
+            <ion-button
+              size="large"
+              type="submit"
+              [disabled]="form.invalid"
+              expand="block"
+              color="primary">
+              Enviar
+            </ion-button>
+
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</app-plantilla>

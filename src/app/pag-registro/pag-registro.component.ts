@@ -1,8 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { NgForm, FormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { PlantillaComponent } from '../plantilla/plantilla.component';
-import { IonButton, IonCol, IonContent, IonGrid, IonInput, IonItem, IonLabel, IonRow } from '@ionic/angular/standalone';
-import {RouterLink} from "@angular/router";
+import {
+  IonButton,
+  IonCol,
+  IonContent,
+  IonGrid,
+  IonInput,
+  IonItem,
+  IonLabel,
+  IonRow,
+  ToastController
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-pag-registro',
@@ -19,21 +29,48 @@ import {RouterLink} from "@angular/router";
     IonInput,
     IonLabel,
     IonButton,
-    RouterLink
+    RouterLink,
+    IonContent
   ]
 })
-
 export class PagRegistroComponent {
 
-  // Puedes añadir propiedades para ngModel si quieres capturar los datos del formulario
-  email: string = '';
-  password: string = '';
+  constructor(
+    private toastController: ToastController,
+    private router: Router
+  ) {}
 
-  // Función que se ejecuta al enviar el formulario
-  register(form: any) {
-    if (form.valid) {
-      console.log('Formulario válido:', this.email, this.password);
-      // Aquí añadirías la lógica de registro
+  // Método para mostrar mensajes tipo Toast
+  async mostrarToast(mensaje: string, color: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 2000,
+      color: color,
+      position: 'bottom'
+    });
+    await toast.present();
+  }
+
+  // Método de registro con validación de contraseñas
+  async register(form: NgForm) {
+    const { password, confirmPassword } = form.value;
+
+    if (!form.valid) {
+      this.mostrarToast('Por favor, completa todos los campos ⚠️', 'warning');
+      return;
     }
+
+    if (password !== confirmPassword) {
+      this.mostrarToast('Las contraseñas no coinciden', 'danger');
+      return;
+    }
+
+    console.log('Formulario válido:', form.value);
+    await this.mostrarToast('Registro exitoso', 'success');
+
+    // Redirigir al login después de 1.5 segundos
+    setTimeout(() => {
+      this.router.navigate(['/pag-login']);
+    }, 1500);
   }
 }

@@ -12,23 +12,23 @@
 
 <ion-footer>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
+    <ion-tab-button tab="home" [routerLink]="'/inicio'">
       <img src="assets/icons/home.svg" alt="Home" class="icono-footer">
       <ion-label></ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="calendar">
+    <ion-tab-button tab="calendar" [routerLink]="'/pag-calendario'">
       <img src="assets/icons/calendar.svg" alt="Calendario" class="icono-footer">
       <ion-label></ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="upload">
-      <img src="assets/icons/upload.svg" alt="Subir" class="icono-footer">
+    <ion-tab-button tab="upload" [routerLink]="'/eventos'">
+      <img src="assets/icons/upload.svg" alt="Eventos" class="icono-footer">
       <ion-label></ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="phone">
+    <ion-tab-button tab="phone" [routerLink]="'/pag-contacto'">
       <img src="assets/icons/phone.svg" alt="Teléfono" class="icono-footer">
       <ion-label></ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="profile">
+    <ion-tab-button tab="profile" [routerLink]="'/pag-registro'">
       <img src="assets/icons/profile.svg" alt="Perfil" class="icono-footer">
       <ion-label></ion-label>
     </ion-tab-button>

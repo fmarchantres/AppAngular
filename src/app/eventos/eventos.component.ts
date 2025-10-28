@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {PlantillaComponent} from "../plantilla/plantilla.component";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
   styleUrls: ['./eventos.component.scss'],
   standalone: true,
-  imports: [PlantillaComponent]
+  imports: [PlantillaComponent, RouterLink]
 })
 export class EventosComponent  implements OnInit {
 

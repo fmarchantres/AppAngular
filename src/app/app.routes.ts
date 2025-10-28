@@ -7,6 +7,7 @@ import {EventoCulturalComponent} from "./evento-cultural/evento-cultural.compone
 import {PagCalendarioComponent} from "./pag-calendario/pag-calendario.component";
 import {PagLoginComponent} from "./pag-login/pag-login.component";
 import {PagRegistroComponent} from "./pag-registro/pag-registro.component";
+import {PagContactoComponent} from "./pag-contacto/pag-contacto.component";
 
 
 export const routes: Routes = [
@@ -46,6 +47,10 @@ export const routes: Routes = [
   {
     path: 'pag-registro',
     component: PagRegistroComponent
+  },
+  {
+    path: 'pag-contacto',
+    component: PagContactoComponent
   }
 
 

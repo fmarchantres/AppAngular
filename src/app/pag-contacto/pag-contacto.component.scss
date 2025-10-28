@@ -39,6 +39,14 @@
   --placeholder-color: #888888; /* color placeholder */
 }
 
+/* Estilizar el texto dentro del textarea (Mensaje) */
+.login-card ion-textarea {
+  color: #000000; /* texto negro */
+  --placeholder-color: #888888; /* color del placeholder */
+  --background: #ffffff;
+  --padding-start: 8px;
+  --padding-end: 8px;
+}
 
 
 
