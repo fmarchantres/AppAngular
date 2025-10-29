@@ -1,0 +1,57 @@
+<app-plantilla>
+  <div class="perfil-container">
+
+    <!-- Sección de usuario -->
+    <div class="perfil-info">
+      <p class="nombre">👋 Lucía García</p>
+      <p class="subtexto">Alumna de Safa Reyes</p>
+    </div>
+
+    <!-- Próximo evento -->
+    <div class="tarjeta-evento">
+      <p class="titulo-evento">Próximo evento</p>
+      <p class="detalle-evento">Torneo deportivo • 47 inscritos</p>
+    </div>
+
+    <!-- Botones de acciones -->
+    <div class="acciones">
+      <ion-button expand="block" color="light">
+        Galería
+      </ion-button>
+      <ion-button expand="block" color="light">
+        Ver detalles
+      </ion-button>
+    </div>
+
+    <!-- Crear evento -->
+    <div class="crear-evento">
+      <ion-button fill="clear" color="primary" class="texto-subrayado">
+        ¿Quieres crear un evento?
+      </ion-button>
+    </div>
+
+
+
+    <!-- Eventos destacados -->
+    <div class="destacados">
+      <p class="titulo-seccion">Eventos destacados</p>
+      <div class="galeria">
+        <img src="assets/eventos/deportivo2.png" alt="Evento 1" [routerLink]="'/evento-deportivo'">
+        <img src="assets/eventos/cultural3.png" alt="Evento 2" [routerLink]="'/evento-cultural'">
+      </div>
+    </div>
+
+    <!-- Eventos pasados -->
+    <div class="eventos-pasados">
+      <div class="tarjeta-pasado">
+        <p class="titulo-pasado">Eventos pasados</p>
+        <p class="detalle-pasado">Gymkana • 5º puesto</p>
+      </div>
+      <div class="tarjeta-pasado">
+        <p class="titulo-pasado">Eventos pasados</p>
+        <p class="detalle-pasado">Concurso de deletreo • 2º puesto</p>
+      </div>
+    </div>
+
+  </div>
+</app-plantilla>

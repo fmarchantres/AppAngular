@@ -1,0 +1,50 @@
+.titulo {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
+.tarjeta-pago {
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  margin: 16px auto;
+  width: 90%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.tarjeta-pago ion-item {
+  --background: transparent;
+  color: black;
+  font-size: 16px;
+}
+
+.metodos-pago {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.metodo {
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.icono-pago {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+}
+
+.subtitulo {
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.texto-inferior p {
+  color: #666;
+  font-size: 13px;
+  width: 90%;
+  margin: 0 auto;
+}

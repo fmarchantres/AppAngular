@@ -5,12 +5,12 @@
     <p class="titulo_eventos">{{ titulo }}</p>
   </div>
 
-  <!-- Imagen del evento -->
+  <!-- Imagen -->
   <div>
     <img [src]="imagen" alt="{{ titulo }}" class="imagen_evento">
   </div>
 
-  <!-- Información del evento -->
+  <!-- Información -->
   <div class="info-evento">
     <ul>
       <li *ngFor="let item of info">
@@ -19,7 +19,7 @@
     </ul>
   </div>
 
-  <!-- Checkbox opcional -->
+  <!-- Checkbox -->
   <div class="checkbox-container" *ngIf="mostrarCheckbox">
     <ion-item class="checkbox-notificaciones" lines="none">
       <ion-checkbox slot="start" [(ngModel)]="recibirNotificaciones"></ion-checkbox>
@@ -27,13 +27,28 @@
     </ion-item>
   </div>
 
-  <!-- Botones opcionales -->
+  <!-- Botones -->
   <div *ngIf="mostrarBotones">
     <div class="boton-interesa">
-      <ion-button expand="block">Me interesa</ion-button>
+      <ion-button
+        expand="block"
+        (click)="marcarInteres()"
+        [ngClass]="{'interesado': interesado}">
+        {{ interesado ? 'Interesado' : 'Me interesa' }}
+      </ion-button>
     </div>
-    <div class="boton-pagar">
-      <ion-button expand="block">Pagar</ion-button>
+
+    <div class="boton-pagar" *ngIf="!esGratuito">
+      <ion-button expand="block" [routerLink]="'/pag-pago'">Pagar</ion-button>
+    </div>
+
+    <div class="boton-registrar" *ngIf="esGratuito">
+      <ion-button
+        expand="block"
+        (click)="registrarEvento()"
+        [ngClass]="{'registrado': registrado}">
+        {{ registrado ? 'Registrado' : 'Registrar' }}
+      </ion-button>
     </div>
   </div>
 

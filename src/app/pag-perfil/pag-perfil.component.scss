@@ -1,0 +1,114 @@
+.perfil-container {
+  text-align: center;
+  padding: 16px;
+  color: #000;
+}
+
+/* Información del usuario */
+.perfil-info {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.nombre {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subtexto {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Tarjeta de próximo evento */
+.tarjeta-evento {
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 0 auto 20px;
+  width: 90%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.titulo-evento {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.detalle-evento {
+  color: #555;
+  font-size: 14px;
+}
+
+/* Botones de acción */
+.acciones {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.acciones ion-button {
+  flex: 1;
+  --background: #f8f8f8;
+  --color: #000;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+/* Crear evento */
+.crear-evento {
+  margin: 20px 0;
+}
+
+.texto-subrayado {
+  text-decoration: underline;
+  text-underline-offset: 3px; /* separa un poco el subrayado del texto */
+  font-weight: 500;
+}
+
+
+
+.texto-crear {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Eventos destacados */
+.destacados {
+  margin-top: 16px;
+}
+
+.titulo-seccion {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.galeria img {
+  width: 45%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Eventos pasados */
+.eventos-pasados {
+  margin-top: 20px;
+}
+
+.tarjeta-pasado {
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px auto;
+  width: 90%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}

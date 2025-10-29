@@ -8,6 +8,8 @@ import {PagCalendarioComponent} from "./pag-calendario/pag-calendario.component"
 import {PagLoginComponent} from "./pag-login/pag-login.component";
 import {PagRegistroComponent} from "./pag-registro/pag-registro.component";
 import {PagContactoComponent} from "./pag-contacto/pag-contacto.component";
+import {PagPagoComponent} from "./pag-pago/pag-pago.component";
+import {PagPerfilComponent} from "./pag-perfil/pag-perfil.component";
 
 
 export const routes: Routes = [
@@ -51,7 +53,16 @@ export const routes: Routes = [
   {
     path: 'pag-contacto',
     component: PagContactoComponent
+  },
+  {
+    path: 'pag-pago',
+  component: PagPagoComponent
+  },
+  {
+    path: 'pag-perfil',
+    component: PagPerfilComponent
   }
+
 
 
 

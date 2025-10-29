@@ -135,7 +135,7 @@ ion-content {
   margin-left: 2px;
 }
 
-.boton-interesa, .boton-pagar {
+.boton-interesa, .boton-registrar, .boton-pagar {
   display: block;
   width: 90%;
   max-width: 400px;
@@ -147,7 +147,13 @@ ion-content {
   --color: #ffffff;
 }
 
-.boton-pagar ion-button {
+/* Al pulsar, cambia a verde */
+.boton-registrar ion-button.registrado {
+  --background: #28a745; /* Verde éxito */
+  --color: #ffffff;
+}
+
+.boton-registrar, .boton-pagar ion-button {
   --background: #2BA2C8;
   --color: #ffffff;
 }
