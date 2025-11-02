@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import {InicioComponent} from "./inicio/inicio.component";
-import {EventosComponent} from "./eventos/eventos.component";
+import {InicioComponent} from "./pag-inicio/inicio.component";
+import {EventosComponent} from "./pag-eventos/eventos.component";
 import {EventoCienciasComponent} from "./evento-ciencias/evento-ciencias.component";
 import {EventoDeportivoComponent} from "./evento-deportivo/evento-deportivo.component";
 import {EventoCulturalComponent} from "./evento-cultural/evento-cultural.component";
@@ -10,20 +10,23 @@ import {PagRegistroComponent} from "./pag-registro/pag-registro.component";
 import {PagContactoComponent} from "./pag-contacto/pag-contacto.component";
 import {PagPagoComponent} from "./pag-pago/pag-pago.component";
 import {PagPerfilComponent} from "./pag-perfil/pag-perfil.component";
+import {PagCrearEventoComponent} from "./pag-crear-evento/pag-crear-evento.component";
+import {PagSubidaFotosComponent} from "./pag-subida-fotos/pag-subida-fotos.component";
+import {PagGaleriaComponent} from "./pag-galeria/pag-galeria.component";
 
 
 export const routes: Routes = [
   {
-    path: 'inicio', //ruta de la pagina inicio
+    path: 'pag-inicio', //ruta de la pagina pag-inicio
     component: InicioComponent,
   },
   {
     path: '',
-    redirectTo: 'inicio', //ahora redirigue por defecto a inicio
+    redirectTo: 'pag-inicio', //ahora redirigue por defecto a pag-inicio
     pathMatch: 'full',
   },
   {
-    path: 'eventos',
+    path: 'pag-eventos',
     component: EventosComponent
   },
   {
@@ -61,7 +64,22 @@ export const routes: Routes = [
   {
     path: 'pag-perfil',
     component: PagPerfilComponent
+  },
+  {
+    path: 'pag-crear-evento',
+    component: PagCrearEventoComponent
+  },
+  {
+    path: 'pag-subida-fotos',
+    component: PagSubidaFotosComponent
+  },
+  {
+    path: 'pag-galeria',
+    component: PagGaleriaComponent
   }
+
+
+
 
 
 

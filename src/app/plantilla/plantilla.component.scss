@@ -4,9 +4,11 @@ ion-toolbar {
 }
 
 ion-content {
+  flex: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
 }
 
 
@@ -49,13 +51,7 @@ ion-tab-button.tab-selected .icono-footer {
   filter: brightness(1.3);
 }
 
-.contenido-dinamico {
-  flex: 1; /* ocupa todo el espacio entre header y footer */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* o center si quieres centrar verticalmente */
-  background-color: #ffffff;   /* asegura fondo blanco */
-}
+
 
 :host {
   display: flex;
@@ -63,9 +59,4 @@ ion-tab-button.tab-selected .icono-footer {
   height: 100vh; /* hace que todo el componente ocupe la altura de la ventana */
 }
 
-ion-content {
-  flex: 1; /* ocupa todo el espacio entre header y footer */
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff; /* asegura fondo blanco */
-}
+

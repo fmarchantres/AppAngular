@@ -3,7 +3,7 @@ import {PlantillaComponent} from "../plantilla/plantilla.component";
 import {RouterLink} from "@angular/router";
 
 @Component({
-  selector: 'app-eventos',
+  selector: 'app-pag-eventos',
   templateUrl: './eventos.component.html',
   styleUrls: ['./eventos.component.scss'],
   standalone: true,

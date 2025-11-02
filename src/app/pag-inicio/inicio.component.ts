@@ -4,11 +4,11 @@ import {RouterLink, RouterOutlet} from "@angular/router";
 import {PlantillaComponent} from "../plantilla/plantilla.component";
 
 @Component({
-  selector: 'app-inicio',
+  selector: 'app-pag-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.scss'],
   standalone: true,
-  imports: [IonicModule, RouterOutlet, RouterLink, PlantillaComponent] //aqui importamos IonicModule
+  imports: [IonicModule, RouterLink, PlantillaComponent]
 })
 export class InicioComponent implements OnInit {
 

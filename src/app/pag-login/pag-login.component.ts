@@ -57,7 +57,7 @@ export class PagLoginComponent {
       console.log('Formulario válido', form.value);
       await this.mostrarToast('Inicio de sesión exitoso', 'success');
 
-      // Redirige al inicio después de 1 segundo
+      // Redirige al pag-inicio después de 1 segundo
       setTimeout(() => {
         this.router.navigate(['/inicio']);
       }, 1000);

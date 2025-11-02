@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TarjetaEventoComponent } from "../tarjeta-evento/tarjeta-evento.component";
 
 @Component({
@@ -8,12 +8,10 @@ import { TarjetaEventoComponent } from "../tarjeta-evento/tarjeta-evento.compone
   standalone: true,
   imports: [TarjetaEventoComponent]
 })
-export class EventoCulturalComponent implements OnInit {
+export class EventoCulturalComponent  {
   @ViewChild(TarjetaEventoComponent) tarjetaEvento!: TarjetaEventoComponent;
 
-  ngOnInit() {
-    // Cuando se crea la página, no hace nada todavía
-  }
+
 
   ionViewWillEnter() {
     //Esto se ejecuta cada vez que la página es visible (Ionic hook)
@@ -22,4 +20,6 @@ export class EventoCulturalComponent implements OnInit {
       this.tarjetaEvento.interesado = false;
     }
   }
+
+
 }

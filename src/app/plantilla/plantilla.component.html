@@ -6,13 +6,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="contenido-flexible">
+<ion-content>
   <ng-content></ng-content>
 </ion-content>
 
 <ion-footer>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home" [routerLink]="'/inicio'">
+    <ion-tab-button tab="home" [routerLink]="'/pag-inicio'">
       <img src="assets/icons/home.svg" alt="Home" class="icono-footer">
       <ion-label></ion-label>
     </ion-tab-button>
@@ -20,8 +20,8 @@
       <img src="assets/icons/calendar.svg" alt="Calendario" class="icono-footer">
       <ion-label></ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="upload" [routerLink]="'/eventos'">
-      <img src="assets/icons/upload.svg" alt="Eventos" class="icono-footer">
+    <ion-tab-button tab="upload" [routerLink]="'/pag-subida-fotos'">
+      <img src="assets/icons/upload.svg" alt="Fotos" class="icono-footer">
       <ion-label></ion-label>
     </ion-tab-button>
     <ion-tab-button tab="phone" [routerLink]="'/pag-contacto'">

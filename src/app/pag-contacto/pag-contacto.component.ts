@@ -10,7 +10,6 @@ import {
   IonLabel,
   IonRow,
   IonTextarea,
-  IonToast,
   ToastController
 } from '@ionic/angular/standalone';
 
@@ -30,7 +29,6 @@ import {
     IonLabel,
     IonTextarea,
     IonButton,
-    IonToast,
   ]
 })
 export class PagContactoComponent {

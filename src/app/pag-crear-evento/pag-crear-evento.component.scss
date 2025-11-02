@@ -4,10 +4,7 @@
   font-weight: bold;
 }
 
-.descripcion{
-  text-align: center;
-  color: black;
-}
+
 
 /* Contenedor de la tarjeta */
 .login-card {
@@ -21,7 +18,7 @@
 
 /* Estilo de los labels dentro de los ion-item */
 .login-card ion-label {
-  color: #000000;
+  color: #000000; /* texto negro */
   font-weight: 500;
 }
 
@@ -39,8 +36,14 @@
   --placeholder-color: #888888; /* color placeholder */
 }
 
-
-
+/* Estilizar el texto dentro del textarea (Mensaje) */
+.login-card ion-textarea {
+  color: #000000; /* texto negro */
+  --placeholder-color: #888888; /* color del placeholder */
+  --background: #ffffff;
+  --padding-start: 8px;
+  --padding-end: 8px;
+}
 
 
 

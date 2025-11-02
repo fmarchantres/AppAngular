@@ -1,0 +1,72 @@
+<app-plantilla>
+
+  <div class="ion-text-center ion-padding">
+    <p class="titulo">Crea tu evento</p>
+  </div>
+
+  <form #form="ngForm" (ngSubmit)="enviarMensaje(form)">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-col size-md="6" size-lg="5" size-xs="12">
+
+          <div class="login-card ion-padding">
+            <ion-item>
+              <ion-label position="stacked">Nombre</ion-label>
+              <ion-input name="nombre" type="text" placeholder="Nombre del evento" ngModel required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Descripción</ion-label>
+              <ion-input name="descripcion" type="text" placeholder="Descipción" ngModel></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Fecha</ion-label>
+              <ion-input
+                name="fecha"
+                type="date"
+                ngModel
+                required>
+              </ion-input>
+
+            </ion-item>
+
+
+
+
+            <ion-item>
+              <ion-label position="stacked">Lugar</ion-label>
+              <ion-textarea name="lugar" placeholder="Lugar donde se celebrará" ngModel required></ion-textarea>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Requisitos</ion-label>
+              <ion-textarea name="requisitos" placeholder="Requisitos para la inscripción" ngModel required></ion-textarea>
+            </ion-item>
+          </div>
+
+          <div class="ion-padding">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block" color="primary">
+                    Crear
+                  </ion-button>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-button size="large" type="button" expand="block" color="medium">
+                    Archivar
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+
+
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</app-plantilla>
