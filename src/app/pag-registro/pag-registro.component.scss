@@ -40,6 +40,32 @@
 }
 
 
+/* Estado normal / disabled */
+.boton-registrar {
+  --background: #2BA2C8;  /* azul principal */
+  --color: white;
+  --border-radius: 10px;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+/* Estado habilitado / formulario válido */
+.boton-registrar.form-valido {
+  --background: #28a745;
+}
+
+/* Estado presionado / click */
+.boton-registrar:active {
+  --background: #93C1DB;
+  transform: scale(0.97); /* efecto “hundido” al pulsar */
+}
+
+/* Estado disabled explícito */
+.boton-registrar:disabled {
+  --background: #a0cce3;
+  --color: #fff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
 
 
 

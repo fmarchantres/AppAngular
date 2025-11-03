@@ -2,13 +2,14 @@
 
   <div class="ion-text-center ion-padding">
     <p class="titulo">Subida de fotos</p>
+    <p class="descripcion">Sube aquí tus fotos favoritas</p>
   </div>
 
   <ion-card class="campo-card">
     <ion-card-content>
       <ion-label position="stacked">Selecciona un evento</ion-label>
 
-      <ion-select placeholder="Selecciona un evento" name="evento" [(ngModel)]="eventoSeleccionado">
+      <ion-select placeholder="Lista de eventos" name="evento" [(ngModel)]="eventoSeleccionado">
         <ion-select-option value="ciencias">Feria de ciencias</ion-select-option>
         <ion-select-option value="cultural">Festival Cultural</ion-select-option>
         <ion-select-option value="deportivo">Torneo deportivo</ion-select-option>
@@ -38,9 +39,13 @@
   </ion-card>
 
   <div class="ion-padding">
-    <ion-button expand="block" color="primary" (click)="subirFotos()">
+    <ion-button
+      class="boton-subir"
+      expand="block"
+      (click)="subirFotos()">
       Subir fotos
     </ion-button>
   </div>
+
 
 </app-plantilla>

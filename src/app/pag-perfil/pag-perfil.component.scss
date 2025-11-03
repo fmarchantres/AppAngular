@@ -52,11 +52,25 @@
 
 .acciones ion-button {
   flex: 1;
-  --background: #f8f8f8;
-  --color: #000;
-  border: 1px solid #ddd;
+  --color: #ffffff;
   border-radius: 10px;
 }
+
+/* Estilo base para ambos botones */
+.boton-accion {
+  --background: #2BA2C8;
+  --color: white;
+  --border-radius: 10px;
+  border: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Efecto al presionar */
+.boton-accion:active {
+  --background: #93C1DB;
+  transform: scale(0.97);
+}
+
 
 /* Crear evento */
 .crear-evento {

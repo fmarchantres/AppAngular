@@ -40,13 +40,15 @@
           <!-- Botón Login -->
           <div class="ion-padding">
             <ion-button
+              class="boton-login"
+              [class.form-valido]="form.valid"
               size="large"
               type="submit"
               [disabled]="form.invalid"
-              expand="block"
-              color="primary">
+              expand="block">
               Login
             </ion-button>
+
           </div>
 
         </ion-col>

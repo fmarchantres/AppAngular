@@ -25,6 +25,28 @@
 }
 
 
+/* Estado normal (disabled o por defecto) */
+.boton-login {
+  --background: #2BA2C8;
+  --color: white;
+  transition: background 0.3s ease;
+
+
+}
+
+/* Estado habilitado / formulario válido */
+.boton-login.form-valido {
+  --background: #28a745;
+}
+
+/* Estado presionado / click */
+.boton-login:active {
+  --background: #93C1DB;
+}
+
+
+
+
 
 
 

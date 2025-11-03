@@ -46,5 +46,45 @@
 }
 
 
+/* ==== BOTONES CREAR Y ARCHIVAR ==== */
+
+/* Estado por defecto */
+.boton-crear {
+  --background: #1976d2; /* azul base */
+  --color: #ffffff;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.boton-archivar {
+  --background: #845ED5; /* naranja base */
+  --color: #ffffff;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+/* Estado al hacer click */
+.boton-crear:active,
+.boton-archivar:active {
+  --background: #93C1DB; /* azul claro */
+  transform: scale(0.97);
+  opacity: 0.95;
+}
+
+/* Estado del formulario válido → verde */
+form.ng-valid .boton-crear,
+form.ng-valid .boton-archivar {
+  --background: #0EA765; /* verde */
+  --color: #fff;
+}
+
+/* Hover */
+.boton-crear:hover,
+.boton-archivar:hover {
+  opacity: 0.9;
+}
+
 
 

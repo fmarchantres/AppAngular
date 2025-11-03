@@ -62,14 +62,16 @@
           <!-- Botón de registro -->
           <div class="ion-padding">
             <ion-button
+              class="boton-registrar"
+              [class.form-valido]="form.valid"
               size="large"
               type="submit"
               [disabled]="form.invalid"
-              expand="block"
-              color="primary">
+              expand="block">
               Registrarse
             </ion-button>
           </div>
+
 
         </ion-col>
       </ion-row>

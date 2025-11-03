@@ -66,3 +66,17 @@
   cursor: pointer;
   opacity: 0.9;
 }
+
+/* Estado normal */
+.boton-subir-btn {
+  --background: #2BA2C8;
+  --color: white;
+  --border-radius: 10px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Estado presionado / click */
+.boton-subir-btn:active {
+  --background: #93C1DB;
+  transform: scale(0.97);
+}

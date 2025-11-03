@@ -29,6 +29,8 @@ export class PagCrearEventoComponent {
 
   constructor(private toastController: ToastController) {}
 
+  //TOAST EVENTO CREADO
+
   async enviarMensaje(form: NgForm) {
     if (form.valid) {
       const toast = await this.toastController.create({
@@ -40,6 +42,18 @@ export class PagCrearEventoComponent {
 
       form.reset();
     }
+  }
+
+  //TOAST EVENTO ARCHIVADO
+  async archivarEvento(form: NgForm) {
+    const toast = await this.toastController.create({
+      message: 'Evento guardado como borrador.',
+      duration: 2000,
+      color: 'warning'
+    });
+    await toast.present();
+
+    form.reset();
   }
 
 }

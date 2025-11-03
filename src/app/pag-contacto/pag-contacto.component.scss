@@ -49,6 +49,33 @@
 }
 
 
+/* Estado normal / disabled */
+.boton-enviar {
+  --background: #2BA2C8;  /* azul principal */
+  --color: white;
+  --border-radius: 10px;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+/* Estado habilitado / formulario válido */
+.boton-enviar.form-valido {
+  --background: #28a745;
+}
+
+/* Estado presionado / click */
+.boton-enviar:active {
+  --background: #93C1DB;
+  transform: scale(0.97);
+}
+
+/* Estado disabled explícito */
+.boton-enviar:disabled {
+  --background: #a0cce3;
+  --color: #fff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
 
 
 

@@ -4,6 +4,11 @@
   color: black;
 }
 
+.descripcion{
+  text-align: center;
+  color: black;
+}
+
 .campo-card{
   background: #ffffff;
   border-radius: 12px;
@@ -33,4 +38,31 @@
   font-size: 12px;
   color: #888;
   margin-bottom: 10px;
+}
+
+/* Estado normal */
+.boton-subir {
+  --background: #2BA2C8;  /* azul principal */
+  --color: white;
+  --border-radius: 10px;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+/* Estado habilitado / formulario válido */
+.boton-subir.form-valido {
+  --background: #28a745; /* verde */
+}
+
+/* Estado presionado / click */
+.boton-subir:active {
+  --background: #93C1DB; /* azul más oscuro */
+  transform: scale(0.97);
+}
+
+/* Estado disabled explícito (opcional) */
+.boton-subir:disabled {
+  --background: #a0cce3; /* azul claro */
+  --color: #fff;
+  cursor: not-allowed;
+  opacity: 0.7;
 }

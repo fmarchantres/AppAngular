@@ -3,7 +3,7 @@
 
     <!-- Sección de usuario -->
     <div class="perfil-info">
-      <p class="nombre">👋 Lucía García</p>
+      <p class="nombre">Hola, Lucía García</p>
       <p class="subtexto">Alumna de Safa Reyes</p>
     </div>
 
@@ -15,14 +15,14 @@
 
     <!-- Botones de acciones -->
     <div class="acciones">
-      <ion-button expand="block" color="light" [routerLink]="'/pag-galeria'">
+      <ion-button expand="block" class="boton-accion" [routerLink]="'/pag-galeria'">
         Galería
       </ion-button>
-      <ion-button expand="block" color="primary" (click)="mostrarDetalles=true">
+      <ion-button expand="block" (click)="mostrarDetalles=true" class="boton-accion">
         Ver detalles
       </ion-button>
-
     </div>
+
 
     <!-- Crear evento -->
     <div class="crear-evento">

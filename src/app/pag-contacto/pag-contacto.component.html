@@ -34,15 +34,16 @@
 
           <div class="ion-padding">
             <ion-button
+              class="boton-enviar"
+              [class.form-valido]="form.valid"
               size="large"
               type="submit"
               [disabled]="form.invalid"
-              expand="block"
-              color="primary">
+              expand="block">
               Enviar
             </ion-button>
-
           </div>
+
 
         </ion-col>
       </ion-row>
