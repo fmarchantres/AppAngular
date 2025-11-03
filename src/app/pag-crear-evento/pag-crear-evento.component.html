@@ -46,17 +46,26 @@
             <ion-grid>
               <ion-row>
                 <ion-col size="6">
-                  <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block" class="boton-crear">
+                  <ion-button
+                    class="boton-crear"
+                    [class.form-valido]="form.valid"
+                    size="large"
+                    type="submit"
+                    [disabled]="form.invalid"
+                    expand="block">
                     Crear
                   </ion-button>
                 </ion-col>
 
                 <ion-col size="6">
-                  <ion-button size="large"
-                              type="button"
-                              expand="block"
-                              class="boton-archivar"
-                              (click)="archivarEvento(form)">
+                  <ion-button
+                    size="large"
+                    type="button"
+                    expand="block"
+                    class="boton-archivar"
+                    [class.form-valido]="form.valid"
+                    [disabled]="form.invalid"
+                    (click)="archivarEvento(form)">
                     Archivar
                   </ion-button>
                 </ion-col>

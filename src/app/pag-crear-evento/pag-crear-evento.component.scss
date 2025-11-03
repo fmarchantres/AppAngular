@@ -8,38 +8,38 @@
 
 /* Contenedor de la tarjeta */
 .login-card {
-  background-color: #ffffff; /* fondo blanco */
-  border: 1px solid #cccccc; /* borde gris */
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
   border-radius: 10px;
   padding: 16px;
   margin-top: 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* sombra suave */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* Estilo de los labels dentro de los ion-item */
 .login-card ion-label {
-  color: #000000; /* texto negro */
+  color: #000000;
   font-weight: 500;
 }
 
 /* Estilizar los ion-item que contienen los inputs */
 .login-card ion-item {
-  --background: #ffffff;   /* fondo blanco */
-  --border-color: #cccccc; /* borde gris */
-  --border-radius: 8px;    /* esquinas redondeadas */
-  margin-bottom: 12px;     /* separación entre inputs */
+  --background: #ffffff;
+  --border-color: #cccccc;
+  --border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 /* Estilizar el texto dentro del input */
 .login-card ion-input {
   color: #000000;           /* texto negro */
-  --placeholder-color: #888888; /* color placeholder */
+  --placeholder-color: #888888;
 }
 
 /* Estilizar el texto dentro del textarea (Mensaje) */
 .login-card ion-textarea {
   color: #000000; /* texto negro */
-  --placeholder-color: #888888; /* color del placeholder */
+  --placeholder-color: #888888;
   --background: #ffffff;
   --padding-start: 8px;
   --padding-end: 8px;
@@ -48,42 +48,25 @@
 
 /* ==== BOTONES CREAR Y ARCHIVAR ==== */
 
-/* Estado por defecto */
-.boton-crear {
-  --background: #1976d2; /* azul base */
-  --color: #ffffff;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-}
-
+/* Estado normal */
+.boton-crear,
 .boton-archivar {
-  --background: #845ED5; /* naranja base */
-  --color: #ffffff;
+  --background: #2BA2C8;
+  --color: white;
+  transition: background 0.3s ease;
   border-radius: 10px;
-  font-weight: 600;
-  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
 }
 
-/* Estado al hacer click */
+/* estado válido */
+.boton-crear.form-valido,
+.boton-archivar.form-valido {
+  --background: #28a745;
+}
+
+/* estado click */
 .boton-crear:active,
 .boton-archivar:active {
-  --background: #93C1DB; /* azul claro */
-  transform: scale(0.97);
-  opacity: 0.95;
-}
-
-/* Estado del formulario válido → verde */
-form.ng-valid .boton-crear,
-form.ng-valid .boton-archivar {
-  --background: #0EA765; /* verde */
-  --color: #fff;
-}
-
-/* Hover */
-.boton-crear:hover,
-.boton-archivar:hover {
-  opacity: 0.9;
+  --background: #93C1DB;
 }
 
 

@@ -14,4 +14,14 @@
       Fecha seleccionada: {{ datetime | date:'fullDate' }}
     </p>
   </div>
+
+  <div class="proximos-eventos">
+    <h3>Próximos eventos</h3>
+
+    <div class="event-card" *ngFor="let ev of eventosProximos">
+      <p class="ev-titulo">{{ ev.titulo }}</p>
+      <p class="ev-fecha">{{ ev.fecha | date: 'fullDate' }}</p>
+      <p class="ev-precio">{{ ev.precio }}</p>
+    </div>
+  </div>
 </app-plantilla>
