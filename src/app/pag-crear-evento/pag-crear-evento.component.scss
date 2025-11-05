@@ -46,26 +46,24 @@
 }
 
 
-/* ==== BOTONES CREAR Y ARCHIVAR ==== */
+/* ==== BOTON CREAR  ==== */
 
 /* Estado normal */
-.boton-crear,
-.boton-archivar {
+.boton-crear, {
   --background: #2BA2C8;
   --color: white;
   transition: background 0.3s ease;
   border-radius: 10px;
+
 }
 
 /* estado válido */
-.boton-crear.form-valido,
-.boton-archivar.form-valido {
+.boton-crear.form-valido,{
   --background: #28a745;
 }
 
 /* estado click */
-.boton-crear:active,
-.boton-archivar:active {
+.boton-crear:active, {
   --background: #93C1DB;
 }
 
