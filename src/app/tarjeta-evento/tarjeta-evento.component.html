@@ -29,6 +29,7 @@
 
   <!-- Botones -->
   <div *ngIf="mostrarBotones">
+    <!--
     <div class="boton-interesa">
       <ion-button
         expand="block"
@@ -37,6 +38,7 @@
         {{ interesado ? 'Interesado' : 'Me interesa' }}
       </ion-button>
     </div>
+    -->
 
     <div class="boton-pagar" *ngIf="!esGratuito">
       <ion-button expand="block" [routerLink]="'/pag-pago'">Pagar</ion-button>

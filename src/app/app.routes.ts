@@ -13,6 +13,7 @@ import {PagPerfilComponent} from "./pag-perfil/pag-perfil.component";
 import {PagCrearEventoComponent} from "./pag-crear-evento/pag-crear-evento.component";
 import {PagSubidaFotosComponent} from "./pag-subida-fotos/pag-subida-fotos.component";
 import {PagGaleriaComponent} from "./pag-galeria/pag-galeria.component";
+import {PagNotificacionesComponent} from "./pag-notificaciones/pag-notificaciones.component";
 
 
 export const routes: Routes = [
@@ -76,6 +77,10 @@ export const routes: Routes = [
   {
     path: 'pag-galeria',
     component: PagGaleriaComponent
+  },
+  {
+    path: 'pag-notificaciones',
+    component: PagNotificacionesComponent
   }
 
 

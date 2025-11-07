@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PlantillaComponent } from '../plantilla/plantilla.component';
-import {IonButton,IonModal} from '@ionic/angular/standalone';
+import {IonButton, IonIcon, IonModal} from '@ionic/angular/standalone';
 import {RouterLink} from "@angular/router";
 
 @Component({
@@ -8,7 +8,7 @@ import {RouterLink} from "@angular/router";
   templateUrl: './pag-perfil.component.html',
   styleUrls: ['./pag-perfil.component.scss'],
   standalone: true,
-  imports: [PlantillaComponent, IonButton,  RouterLink, IonModal],
+  imports: [PlantillaComponent, IonButton, RouterLink, IonModal, IonIcon],
 })
 export class PagPerfilComponent {
   mostrarDetalles:boolean = false;
