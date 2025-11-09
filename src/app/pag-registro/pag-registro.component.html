@@ -15,11 +15,22 @@
           <!-- Inputs con padding y fondo blanco -->
           <div class="login-card ion-padding">
             <ion-item>
-              <ion-label position="stacked">Nombre completo</ion-label>
+              <ion-label position="stacked">Nombre</ion-label>
               <ion-input
                 name="fullname"
                 type="text"
-                placeholder="Tu nombre completo"
+                placeholder="Tu nombre"
+                ngModel
+                required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Apellidos</ion-label>
+              <ion-input
+                name="fullname"
+                type="text"
+                placeholder="Tus dos apellidos"
                 ngModel
                 required>
               </ion-input>
