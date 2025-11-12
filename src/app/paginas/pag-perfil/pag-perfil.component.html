@@ -1,0 +1,75 @@
+<app-plantilla>
+  <div class="perfil-container">
+
+    <!-- Sección de usuario -->
+    <div class="perfil-info">
+      <p class="nombre">Hola, Lucía García</p>
+      <p class="subtexto">Alumna de Safa Reyes</p>
+    </div>
+
+    <!-- Próximo evento -->
+    <div class="tarjeta-evento">
+      <p class="titulo-evento">Próximo evento</p>
+      <p class="detalle-evento">Torneo deportivo • 47 inscritos</p>
+    </div>
+
+    <!-- Botones de acciones -->
+    <div class="acciones">
+      <ion-button expand="block" class="boton-accion" [routerLink]="'/pag-galeria'">
+        Galería
+      </ion-button>
+      <ion-button expand="block" (click)="mostrarDetalles=true" class="boton-accion">
+        Ver detalles
+      </ion-button>
+    </div>
+
+
+    <!-- Crear evento -->
+    <div class="crear-evento">
+      <ion-button fill="clear" [routerLink]="'/pag-crear-evento'">¿Quieres crear un evento?</ion-button>
+    </div>
+
+
+    <!-- Eventos destacados -->
+    <div class="destacados">
+      <p class="titulo-seccion">Eventos destacados</p>
+      <div class="galeria">
+        <img src="../../../assets/pag-eventos/deportivo2.png" alt="Evento 1" [routerLink]="'/evento-deportivo'">
+        <img src="../../../assets/pag-eventos/cultural3.png" alt="Evento 2" [routerLink]="'/evento-cultural'">
+      </div>
+    </div>
+
+    <!-- Eventos pasados -->
+    <div class="eventos-pasados">
+      <div class="tarjeta-pasado">
+        <p class="titulo-pasado">Eventos pasados</p>
+        <p class="detalle-pasado">Gymkana • 5º puesto</p>
+      </div>
+      <div class="tarjeta-pasado">
+        <p class="titulo-pasado">Eventos pasados</p>
+        <p class="detalle-pasado">Concurso de deletreo • 2º puesto</p>
+      </div>
+    </div>
+  </div>
+
+  <ion-modal [isOpen]="mostrarDetalles" (didDismiss)="mostrarDetalles=false">
+    <ng-template>
+      <div class="modal-detalles-container">
+        <h2>{{detallesEvento.titulo}}</h2>
+        <ul>
+          <li>📅 <strong>Hora:</strong> {{detallesEvento.hora}}</li>
+          <li>📍 <strong>Lugar:</strong> {{detallesEvento.lugar}}</li>
+          <li>ℹ️ <strong>Descripción:</strong> {{detallesEvento.descripcion}}</li>
+          <li>✅ <strong>Requisitos:</strong> {{detallesEvento.requisitos}}</li>
+          <li>👤 {{detallesEvento.asistentes}}</li>
+          <li>💵 {{detallesEvento.precio}}</li>
+        </ul>
+
+        <div style="text-align:center; margin-top:18px;">
+          <ion-button color="danger" (click)="mostrarDetalles=false">Cerrar</ion-button>
+        </div>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+</app-plantilla>

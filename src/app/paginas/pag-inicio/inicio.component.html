@@ -1,0 +1,43 @@
+<app-plantilla>
+  <ion-content class="ion-padding no-padding">
+    <div class="contenedor-botones">
+      <ion-grid>
+        <ion-row>
+          <!-- BOTÓN ACCEDER -->
+          <ion-col class="boton-wrapper">
+            <p class="boton-texto">Acceder</p>
+            <ion-button fill="clear" class="custom-btn" [routerLink]="'/pag-login'">
+              <img src="../../../assets/icons/login.png" alt="Acceder" />
+            </ion-button>
+          </ion-col>
+
+          <!-- BOTÓN REGISTRAR -->
+          <ion-col class="boton-wrapper">
+            <p class="boton-texto">Registrar</p>
+            <ion-button fill="clear" class="custom-btn" [routerLink]="'/pag-registro'">
+              <img src="../../../assets/icons/registrar.png" alt="Registrar" />
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- BOTÓN CONTACTO -->
+          <ion-col class="boton-wrapper">
+            <p class="boton-texto">Contacto</p>
+            <ion-button fill="clear" class="custom-btn" [routerLink]="'/pag-contacto'">
+              <img src="../../../assets/icons/contacto.png" alt="Contacto" />
+            </ion-button>
+          </ion-col>
+
+          <!-- BOTÓN EVENTOS -->
+          <ion-col class="boton-wrapper">
+            <p class="boton-texto">Eventos</p>
+            <ion-button fill="clear" class="custom-btn" [routerLink]="'/pag-eventos'">
+              <img src="../../../assets/icons/calendario.png" alt="Eventos" />
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-content>
+</app-plantilla>

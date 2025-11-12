@@ -8,14 +8,16 @@ import { AppComponent } from './app/app.component';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import {provideHttpClient} from "@angular/common/http";
 
-registerLocaleData(localeEs); // <-- registra ES
+registerLocaleData(localeEs); // <-- registra idioma español
 
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    { provide: LOCALE_ID, useValue: 'es-ES' } // usa formato ES global
+    provideHttpClient(),
+    { provide: LOCALE_ID, useValue: 'es-ES' } // usa formato español global
   ],
 });

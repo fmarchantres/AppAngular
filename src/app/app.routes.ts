@@ -1,19 +1,19 @@
 import { Routes } from '@angular/router';
-import {InicioComponent} from "./pag-inicio/inicio.component";
-import {EventosComponent} from "./pag-eventos/eventos.component";
-import {EventoCienciasComponent} from "./evento-ciencias/evento-ciencias.component";
-import {EventoDeportivoComponent} from "./evento-deportivo/evento-deportivo.component";
-import {EventoCulturalComponent} from "./evento-cultural/evento-cultural.component";
-import {PagCalendarioComponent} from "./pag-calendario/pag-calendario.component";
-import {PagLoginComponent} from "./pag-login/pag-login.component";
-import {PagRegistroComponent} from "./pag-registro/pag-registro.component";
-import {PagContactoComponent} from "./pag-contacto/pag-contacto.component";
-import {PagPagoComponent} from "./pag-pago/pag-pago.component";
-import {PagPerfilComponent} from "./pag-perfil/pag-perfil.component";
-import {PagCrearEventoComponent} from "./pag-crear-evento/pag-crear-evento.component";
-import {PagSubidaFotosComponent} from "./pag-subida-fotos/pag-subida-fotos.component";
-import {PagGaleriaComponent} from "./pag-galeria/pag-galeria.component";
-import {PagNotificacionesComponent} from "./pag-notificaciones/pag-notificaciones.component";
+import {InicioComponent} from "./paginas/pag-inicio/inicio.component";
+import {EventosComponent} from "./paginas/pag-eventos/eventos.component";
+import {EventoCienciasComponent} from "./paginas/evento-ciencias/evento-ciencias.component";
+import {EventoDeportivoComponent} from "./paginas/evento-deportivo/evento-deportivo.component";
+import {EventoCulturalComponent} from "./paginas/evento-cultural/evento-cultural.component";
+import {PagCalendarioComponent} from "./paginas/pag-calendario/pag-calendario.component";
+import {PagLoginComponent} from "./paginas/pag-login/pag-login.component";
+import {PagRegistroComponent} from "./paginas/pag-registro/pag-registro.component";
+import {PagContactoComponent} from "./paginas/pag-contacto/pag-contacto.component";
+import {PagPagoComponent} from "./paginas/pag-pago/pag-pago.component";
+import {PagPerfilComponent} from "./paginas/pag-perfil/pag-perfil.component";
+import {PagCrearEventoComponent} from "./paginas/pag-crear-evento/pag-crear-evento.component";
+import {PagSubidaFotosComponent} from "./paginas/pag-subida-fotos/pag-subida-fotos.component";
+import {PagGaleriaComponent} from "./paginas/pag-galeria/pag-galeria.component";
+import {PagNotificacionesComponent} from "./paginas/pag-notificaciones/pag-notificaciones.component";
 
 
 export const routes: Routes = [
