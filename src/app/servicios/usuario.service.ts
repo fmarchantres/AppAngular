@@ -20,6 +20,13 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) {}
 
+  //LOGIN DEL USUARIO
+  login(email: string, password: string) {
+    return this.http.post<any>(`${this.apiUrl}/login`, { email, password });
+  }
+
+
+  //REGISTRO DEL USUARIO
   registrar(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(this.apiUrl, usuario);
   }
@@ -35,5 +42,7 @@ export class UsuarioService {
   eliminar(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+
 }
 

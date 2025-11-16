@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { PlantillaComponent } from "../plantilla/plantilla.component";
+import { UsuarioService} from "../../servicios/usuario.service";
 import {
   IonButton,
   IonCol,
@@ -30,15 +31,16 @@ import {
     IonInput,
     IonLabel,
     IonButton,
-    IonContent
   ]
 })
 export class PagLoginComponent {
 
   constructor(
     private toastController: ToastController,
-    private router: Router
-  ) {}
+    private router: Router,
+    private usuarioService: UsuarioService
+  ) {
+  }
 
   // Método para mostrar el mensaje Toast
   async mostrarToast(mensaje: string, color: string) {
@@ -51,19 +53,31 @@ export class PagLoginComponent {
     await toast.present();
   }
 
-  // Este método se llama al enviar el formulario
-  async login(form: NgForm) {
-    if (form.valid) {
-      console.log('Formulario válido', form.value);
-      await this.mostrarToast('Inicio de sesión exitoso', 'success');
 
-      // Redirige al pag-inicio después de 1 segundo
-      setTimeout(() => {
-        this.router.navigate(['/inicio']);
-      }, 1000);
-    } else {
-      console.log('Formulario inválido');
-      this.mostrarToast('Por favor, completa todos los campos', 'warning');
+  //METODO LOGIN
+  login(form: NgForm) {
+    if (!form.valid) {
+      this.mostrarToast('Completa todos los campos', 'warning');
+      return;
     }
+
+    const {email, password} = form.value;
+
+    this.usuarioService.login(email, password).subscribe({
+      next: async (usuario) => {
+        await this.mostrarToast(`Bienvenido ${usuario.nombre} `, 'success');
+
+        // Guardar sesión local
+        localStorage.setItem('usuario', JSON.stringify(usuario));
+
+        // Redirigir
+        this.router.navigate(['/pag-perfil']);
+      },
+      error: async () => {
+        await this.mostrarToast('Email o contraseña incorrectos', 'danger');
+      }
+    });
   }
 }
+
+
