@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { EventoService } from '../../servicios/evento.service';
+
 import { NgForm, FormsModule } from '@angular/forms';
 import {
   IonButton, IonCol, IonGrid,IonInput, IonItem, IonLabel, IonRow, IonTextarea, ToastController
@@ -27,22 +29,57 @@ import { RouterModule } from "@angular/router";
 })
 export class PagCrearEventoComponent {
 
-  constructor(private toastController: ToastController) {}
+  constructor(private toastController: ToastController,
+              private eventoService: EventoService) { }
+
+
+
+
 
   //TOAST EVENTO CREADO
-  async enviarMensaje(form: NgForm) {
-    if (form.valid) {
+  async crearEvento(form: NgForm) {
+    if (!form.valid) {
       const toast = await this.toastController.create({
-        message: 'Evento creado correctamente.',
+        message: 'Por favor rellena todos los campos.',
         duration: 2000,
-        color: 'success'
+        color: 'warning'
       });
       toast.present();
-
-      form.reset();
+      return;
     }
+    const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
+
+    const evento = {
+      nombre: form.value.nombre,
+      descripcion: form.value.descripcion,
+      fecha: form.value.fecha + ':00', //para que recoja los segundos
+      lugar: form.value.lugar,
+      requisitos: form.value.requisitos,
+      precio: form.value.precio,
+      creador: {id: usuario.id} //DEBE SER UNN OBJETO CON ID YA QUE SPRING BOOT ESPERA ESO PARA LA RELACION MAY TO ONE
+    };
+
+
+    //ENVIAR AL BACKEND
+    this.eventoService.crearEvento(evento).subscribe({
+      next: async () => {
+        const toast = await this.toastController.create({
+          message: 'Evento creado correctamente 🎉',
+          duration: 2000,
+          color: 'success'
+        });
+        toast.present();
+        form.reset();
+      },
+      error: async (err) => {
+        console.error('Error al crear evento:', err);
+        const toast = await this.toastController.create({
+          message: 'Error al crear el evento ❌',
+          duration: 2000,
+          color: 'danger'
+        });
+        toast.present();
+      }
+    });
   }
-
-
-
 }

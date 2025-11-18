@@ -27,7 +27,7 @@ export class PagSubidaFotosComponent {
   }
 
   subirFotos(){
-    console.log("Evento:", this.eventoSeleccionado);
+    console.log("EventoService:", this.eventoSeleccionado);
     console.log("Descripción:", this.descripcion);
     console.log("Fotos seleccionadas:", this.fotos);
   }

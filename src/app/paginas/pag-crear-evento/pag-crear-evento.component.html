@@ -4,7 +4,7 @@
     <p class="titulo">Crea tu evento</p>
   </div>
 
-  <form #form="ngForm" (ngSubmit)="enviarMensaje(form)">
+  <form #form="ngForm" (ngSubmit)="crearEvento(form)">
     <ion-grid>
       <ion-row class="ion-justify-content-center ion-align-items-center">
         <ion-col size-md="6" size-lg="5" size-xs="12">
@@ -17,14 +17,14 @@
 
             <ion-item>
               <ion-label position="stacked">Descripción</ion-label>
-              <ion-input name="descripcion" type="text" placeholder="Descipción" ngModel></ion-input>
+              <ion-input name="descripcion" type="text" placeholder="Descripción" ngModel></ion-input>
             </ion-item>
 
             <ion-item>
               <ion-label position="stacked">Fecha</ion-label>
               <ion-input
                 name="fecha"
-                type="date"
+                type="datetime-local"
                 ngModel
                 required>
               </ion-input>
@@ -44,7 +44,7 @@
 
           <ion-item>
             <ion-label position="stacked">Precio</ion-label>
-            <ion-textarea name="Precio" placeholder="Precio/Gratuito" ngModel required></ion-textarea>
+            <ion-input name="precio" type="number" ngModel required></ion-input>
           </ion-item>
           </div>
 
