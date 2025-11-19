@@ -81,7 +81,14 @@ export const routes: Routes = [
   {
     path: 'pag-notificaciones',
     component: PagNotificacionesComponent
+  },
+  {
+    path: 'evento/:id',
+    loadComponent: () =>
+      import('./paginas/evento-creado-usuario/evento-creado-usuario.component')
+        .then(m => m.EventoCreadoUsuarioComponent)
   }
+
 
 
 

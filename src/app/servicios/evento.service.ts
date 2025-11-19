@@ -11,12 +11,15 @@ export class EventoService {
 
   constructor(private http: HttpClient) {}
 
-    crearEvento(evento: any): Observable<any> {
+  crearEvento(evento: any): Observable<any> {
       return this.http.post(this.apiUrl, evento);
-    }
+  }
 
-    obtenerEventos(): Observable<any[]> {
+  obtenerEventos(): Observable<any[]> {
       return this.http.get<any[]>(this.apiUrl);
-    }
+  }
 
+  obtenerEventoPorId(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
 }

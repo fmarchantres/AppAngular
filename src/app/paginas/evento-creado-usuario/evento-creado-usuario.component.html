@@ -1,0 +1,16 @@
+  <app-tarjeta-evento
+    *ngIf="evento"
+    [titulo]="evento.nombre"
+    [imagen]="'assets/pag-eventos/generico.jpg'"
+    [info]="[
+    {icono:'📅', etiqueta:'Fecha', valor: evento.fecha},
+    {icono:'📍', etiqueta:'Lugar', valor: evento.lugar},
+    {icono:'ℹ️', etiqueta:'Descripción', valor: evento.descripcion},
+    {icono:'💵', etiqueta:'Precio', valor: evento.precio + ' €'}
+  ]"
+    [mostrarCheckbox]="true"
+    [mostrarBotones]="true"
+    [esGratuito]="evento.precio === 0">
+
+  </app-tarjeta-evento>
+

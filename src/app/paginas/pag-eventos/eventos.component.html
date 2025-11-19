@@ -16,7 +16,18 @@
     <div class="evento3" [routerLink]="'/evento-cultural'">
       <img src="../../../assets/pag-eventos/cultural3.png" alt="EventoService 3" class="imagen-evento">
     </div>
-
   </div>
+
+
+  <!-- LISTA DINÁMICA DE EVENTOS (SOLO IMÁGENES CLICKABLES) -->
+  <div class="evento-dinamico" *ngFor="let ev of eventos">
+    <img
+      src="assets/pag-eventos/generico.jpg"
+      alt="Evento genérico"
+      class="imagen-evento"
+      [routerLink]="['/evento', ev.id]"
+    >
+  </div>
+
 </app-plantilla>
 

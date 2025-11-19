@@ -52,7 +52,7 @@ export class PagCrearEventoComponent {
     const evento = {
       nombre: form.value.nombre,
       descripcion: form.value.descripcion,
-      fecha: form.value.fecha + ':00', //para que recoja los segundos
+      fecha: form.value.fecha ,
       lugar: form.value.lugar,
       requisitos: form.value.requisitos,
       precio: form.value.precio,
@@ -64,7 +64,7 @@ export class PagCrearEventoComponent {
     this.eventoService.crearEvento(evento).subscribe({
       next: async () => {
         const toast = await this.toastController.create({
-          message: 'Evento creado correctamente 🎉',
+          message: 'Evento creado correctamente',
           duration: 2000,
           color: 'success'
         });
@@ -74,7 +74,7 @@ export class PagCrearEventoComponent {
       error: async (err) => {
         console.error('Error al crear evento:', err);
         const toast = await this.toastController.create({
-          message: 'Error al crear el evento ❌',
+          message: 'Error al crear el evento',
           duration: 2000,
           color: 'danger'
         });
