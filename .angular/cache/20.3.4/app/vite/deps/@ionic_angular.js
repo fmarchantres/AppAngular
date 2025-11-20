@@ -36,6 +36,19 @@ import {
 } from "./chunk-PUXKK55T.js";
 import "./chunk-LCMILTBF.js";
 import {
+  getPlatforms,
+  initialize,
+  isPlatform
+} from "./chunk-GTCMUPY2.js";
+import "./chunk-YEG7QYIJ.js";
+import {
+  bootstrapLazy
+} from "./chunk-NCWTHCE2.js";
+import {
+  createGesture
+} from "./chunk-Z3OEOVFM.js";
+import "./chunk-QA2SYHF5.js";
+import {
   AngularDelegate,
   Config,
   ConfigToken,
@@ -69,19 +82,6 @@ import "./chunk-6U2AQA2C.js";
 import "./chunk-EODYS5EQ.js";
 import "./chunk-QEE7QVES.js";
 import "./chunk-2H3NLAAY.js";
-import {
-  getPlatforms,
-  initialize,
-  isPlatform
-} from "./chunk-GTCMUPY2.js";
-import "./chunk-YEG7QYIJ.js";
-import {
-  bootstrapLazy
-} from "./chunk-NCWTHCE2.js";
-import {
-  createGesture
-} from "./chunk-Z3OEOVFM.js";
-import "./chunk-QA2SYHF5.js";
 import {
   ActivatedRoute,
   Router
