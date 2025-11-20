@@ -56,7 +56,7 @@ export class PagCrearEventoComponent {
       lugar: form.value.lugar,
       requisitos: form.value.requisitos,
       precio: form.value.precio,
-      creador: {id: usuario.id} //DEBE SER UNN OBJETO CON ID YA QUE SPRING BOOT ESPERA ESO PARA LA RELACION MAY TO ONE
+      creadorId: usuario.id
     };
 
 
