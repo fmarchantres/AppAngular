@@ -29,16 +29,6 @@
 
   <!-- Botones -->
   <div *ngIf="mostrarBotones">
-    <!--
-    <div class="boton-interesa">
-      <ion-button
-        expand="block"
-        (click)="marcarInteres()"
-        [ngClass]="{'interesado': interesado}">
-        {{ interesado ? 'Interesado' : 'Me interesa' }}
-      </ion-button>
-    </div>
-    -->
 
     <div class="boton-pagar" *ngIf="!esGratuito">
       <ion-button expand="block" [routerLink]="'/pag-pago'">Pagar</ion-button>
@@ -50,6 +40,23 @@
         (click)="registrarEvento()"
         [ngClass]="{'registrado': registrado}">
         {{ registrado ? 'Registrado' : 'Registrar' }}
+      </ion-button>
+    </div>
+
+    <div class="boton-registrar">
+      <ion-button
+        expand="block"
+        [ngClass]="{'registrado': registrado}">
+        {{ registrado ? 'Registrado' : 'Modificar' }}
+      </ion-button>
+    </div>
+
+    <div class="boton-registrar">
+      <ion-button
+        expand="block"
+
+        [ngClass]="{'registrado': registrado}">
+        {{ registrado ? 'Registrado' : 'Eliminar' }}
       </ion-button>
     </div>
   </div>
