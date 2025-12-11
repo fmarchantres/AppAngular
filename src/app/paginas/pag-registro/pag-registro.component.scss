@@ -11,12 +11,12 @@
 
 /* Contenedor de la tarjeta */
 .login-card {
-  background-color: #ffffff; /* fondo blanco */
-  border: 1px solid #cccccc; /* borde gris */
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
   border-radius: 10px;
   padding: 16px;
   margin-top: 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* sombra suave */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* Estilo de los labels dentro de los ion-item */
@@ -27,22 +27,22 @@
 
 /* Estilizar los ion-item que contienen los inputs */
 .login-card ion-item {
-  --background: #ffffff;   /* fondo blanco */
-  --border-color: #cccccc; /* borde gris */
-  --border-radius: 8px;    /* esquinas redondeadas */
-  margin-bottom: 12px;     /* separación entre inputs */
+  --background: #ffffff;
+  --border-color: #cccccc;
+  --border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 /* Estilizar el texto dentro del input */
 .login-card ion-input {
-  color: #000000;           /* texto negro */
-  --placeholder-color: #888888; /* color placeholder */
+  color: #000000;
+  --placeholder-color: #888888;
 }
 
 
 /* Estado normal / disabled */
 .boton-registrar {
-  --background: #2BA2C8;  /* azul principal */
+  --background: #2BA2C8;
   --color: white;
   --border-radius: 10px;
   transition: background 0.3s ease, transform 0.1s ease;
@@ -56,7 +56,7 @@
 /* Estado presionado / click */
 .boton-registrar:active {
   --background: #93C1DB;
-  transform: scale(0.97); /* efecto “hundido” al pulsar */
+  transform: scale(0.97);
 }
 
 /* Estado disabled explícito */

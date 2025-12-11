@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -28,8 +28,9 @@ export class UsuarioService {
 
   //REGISTRO DEL USUARIO
   registrar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(this.apiUrl, usuario);
+    return this.http.post<Usuario>(`${this.apiUrl}/registrar`, usuario);
   }
+
 
   obtenerUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(this.apiUrl);
@@ -46,3 +47,4 @@ export class UsuarioService {
 
 }
 
+*/

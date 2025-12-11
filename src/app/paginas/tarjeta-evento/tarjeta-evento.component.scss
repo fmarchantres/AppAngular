@@ -7,18 +7,18 @@
 
 .imagen_evento {
   display: block;
-  margin: 0 auto; /* centra la imagen */
-  width: 90%; /* ocupa la mayor parte del ancho */
-  max-width: 400px; /* límite máximo */
-  border-radius: 15px; /* redondea las esquinas */
-  object-fit: cover; /* mantiene proporción */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* sombra suave */
+  margin: 0 auto;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 
 .info-evento {
   display: block;
-  margin: 0 auto; /* centra la imagen */
+  margin: 0 auto;
   width: 90%;
   background-color: #ffffff;
   border-radius: 12px;

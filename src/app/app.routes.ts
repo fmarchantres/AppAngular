@@ -18,12 +18,12 @@ import {PagNotificacionesComponent} from "./paginas/pag-notificaciones/pag-notif
 
 export const routes: Routes = [
   {
-    path: 'pag-inicio', //ruta de la pagina pag-inicio
+    path: 'pag-inicio',
     component: InicioComponent,
   },
   {
     path: '',
-    redirectTo: 'pag-inicio', //ahora redirigue por defecto a pag-inicio
+    redirectTo: 'pag-inicio',
     pathMatch: 'full',
   },
   {

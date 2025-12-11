@@ -57,12 +57,12 @@ export class PagRegistroComponent {
     const { password, confirmPassword, ...usuario } = form.value;
 
     if (!form.valid) {
-     await this.mostrarToast('Por favor, completa todos los campos ⚠️', 'warning');
+     await this.mostrarToast('Por favor, completa todos los campos ', 'warning');
       return;
     }
 
     if (password !== confirmPassword) {
-      await this.mostrarToast('Las contraseñas no coinciden ❌', 'danger');
+      await this.mostrarToast('Las contraseñas no coinciden ', 'danger');
       return;
     }
 
@@ -70,7 +70,7 @@ export class PagRegistroComponent {
 
     this.usuarioService.registrar(usuario).subscribe({
       next: async () => {
-        await this.mostrarToast('Registro exitoso ✅', 'success');
+        await this.mostrarToast('Registro exitoso ', 'success');
         setTimeout(() => this.router.navigate(['/pag-login']), 1500);
       },
       error: async (err) => {

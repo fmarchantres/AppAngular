@@ -54,30 +54,30 @@ export class PagLoginComponent {
   }
 
 
-  //METODO LOGIN
-  login(form: NgForm) {
-    if (!form.valid) {
-      this.mostrarToast('Completa todos los campos', 'warning');
+
+// METODO LOGIN (FAKE)
+  async login(form: NgForm) {
+    const { email, password } = form.value;
+
+    if (!email || !password) {
+      await this.mostrarToast('Completa todos los campos', 'warning');
       return;
     }
 
-    const {email, password} = form.value;
+    // --- LOGIN FALSO ---
+    if (email === 'demo@demo.com' && password === '1234') {
+      await this.mostrarToast('Usuario logueado correctamente', 'success');
 
-    this.usuarioService.login(email, password).subscribe({
-      next: async (usuario) => {
-        await this.mostrarToast(`Bienvenido ${usuario.nombre} `, 'success');
+      // Simular guardar usuario (fake)
+      localStorage.setItem('usuario', JSON.stringify({ email }));
 
-        // Guardar sesión local
-        localStorage.setItem('usuario', JSON.stringify(usuario));
-
-        // Redirigir
-        this.router.navigate(['/pag-perfil']);
-      },
-      error: async () => {
-        await this.mostrarToast('Email o contraseña incorrectos', 'danger');
-      }
-    });
+      // Redirigir
+      this.router.navigate(['/pag-perfil']);
+    } else {
+      await this.mostrarToast('Email o contraseña incorrectos', 'danger');
+    }
   }
+
 }
 
 
