@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Injectable} from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { PlantillaComponent } from '../plantilla/plantilla.component';
@@ -33,6 +33,8 @@ import {
     RouterLink,
   ]
 })
+
+
 export class PagRegistroComponent {
 
   constructor(
@@ -41,7 +43,7 @@ export class PagRegistroComponent {
     private usuarioService: UsuarioService
   ) {}
 
-  // Método para mostrar mensajes tipo Toast
+  //Método para mostrar mensajes tipo Toast
   async mostrarToast(mensaje: string, color: string) {
     const toast = await this.toastController.create({
       message: mensaje,
@@ -52,7 +54,7 @@ export class PagRegistroComponent {
     await toast.present();
   }
 
-  // Método de registro con validación y conexión al backend
+  //Método de registro con validación y conexión al backend
   async register(form: NgForm) {
     const { password, confirmPassword, ...usuario } = form.value;
 
@@ -73,7 +75,7 @@ export class PagRegistroComponent {
         await this.mostrarToast('Registro exitoso ', 'success');
         setTimeout(() => this.router.navigate(['/pag-login']), 1500);
       },
-      error: async (err) => {
+      error: async (err: any) => {
         const msg = err.error || 'Error al registrar ❌';
         await this.mostrarToast(msg, 'danger');
       }

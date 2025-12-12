@@ -1,4 +1,4 @@
-/*
+
 
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
@@ -12,6 +12,7 @@ import {Observable} from "rxjs";
 export class EventoService {
   private apiUrl = 'http://localhost:8080/api/eventos';
 
+  // eslint-disable-next-line @angular-eslint/prefer-inject
   constructor(private http: HttpClient) {}
 
   crearEvento(evento: any): Observable<any> {
@@ -26,4 +27,4 @@ export class EventoService {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 }
-*/
+
