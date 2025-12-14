@@ -11,6 +11,17 @@
 
           <div class="login-card ion-padding">
             <ion-item>
+              <ion-input
+              label="URL de la imagen"
+              label-placement="stacked"
+              name="urlImagen"
+              placeholder="https://miimagen.com/foto.jpg"
+              ngModel>
+              </ion-input>
+            </ion-item>
+
+
+            <ion-item>
               <ion-label position="stacked">Nombre</ion-label>
               <ion-input name="nombre" type="text" placeholder="Nombre del evento" ngModel required></ion-input>
             </ion-item>
@@ -44,7 +55,13 @@
 
           <ion-item>
             <ion-label position="stacked">Precio</ion-label>
-            <ion-input name="precio" type="number" ngModel required></ion-input>
+            <ion-input
+              name="precio"
+              type="number"
+              inputmode="numeric"
+              placeholder="0 = Gratuito"
+              ngModel>
+            </ion-input>
           </ion-item>
           </div>
 

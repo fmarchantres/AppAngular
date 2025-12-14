@@ -3,31 +3,45 @@
     <p class="titulo_eventos">Próximos Eventos</p>
   </div>
 
-  <div class="eventos">
-
-    <div class="evento1" [routerLink]="'/evento-ciencias'">
-      <img src="../../../assets/pag-eventos/ciencias1.png" alt="EventoService 1" class="imagen-evento">
-    </div>
-
-    <div class="evento2" [routerLink]="'/evento-deportivo'">
-      <img src="../../../assets/pag-eventos/deportivo2.png" alt="EventoService 2" class="imagen-evento">
-    </div>
-
-    <div class="evento3" [routerLink]="'/evento-cultural'">
-      <img src="../../../assets/pag-eventos/cultural3.png" alt="EventoService 3" class="imagen-evento">
-    </div>
-  </div>
-
-
+<div class="eventos">
   <!-- LISTA DINÁMICA DE EVENTOS (SOLO IMÁGENES CLICKABLES) -->
   <div class="evento-dinamico" *ngFor="let ev of eventos">
     <img
-      src="assets/pag-eventos/generico.jpg"
+      [src]="ev.urlImagen || 'assets/pag-eventos/generico.jpg'"
       alt="Evento genérico"
       class="imagen-evento"
       [routerLink]="['/evento', ev.id]"
     >
+
+    <p class="nombre-evento" [routerLink]="['/evento',ev.id]"> {{ ev.nombre }}</p>
   </div>
+</div>
 
 </app-plantilla>
+
+
+
+
+  <!--
+
+ <div class="eventos">
+
+   <div class="evento1" [routerLink]="'/evento-ciencias'">
+     <img src="../../../assets/pag-eventos/ciencias1.png" alt="EventoService 1" class="imagen-evento">
+   </div>
+
+   <div class="evento2" [routerLink]="'/evento-deportivo'">
+     <img src="../../../assets/pag-eventos/deportivo2.png" alt="EventoService 2" class="imagen-evento">
+   </div>
+
+   <div class="evento3" [routerLink]="'/evento-cultural'">
+     <img src="../../../assets/pag-eventos/cultural3.png" alt="EventoService 3" class="imagen-evento">
+   </div>
+  </div>
+   -->
+
+
+
+
+
 

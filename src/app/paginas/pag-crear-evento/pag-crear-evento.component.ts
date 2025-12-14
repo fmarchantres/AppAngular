@@ -49,14 +49,17 @@ export class PagCrearEventoComponent {
     }
     const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
 
+
     const evento = {
       nombre: form.value.nombre,
       descripcion: form.value.descripcion,
       fecha: form.value.fecha ,
       lugar: form.value.lugar,
       requisitos: form.value.requisitos,
-      precio: form.value.precio,
-      creadorId: usuario.id
+      precio: form.value.precio ? Number(form.value.precio) : 0,
+      usuarioId: usuario.id,
+      urlImagen: form.value.urlImagen
+
     };
 
 
@@ -71,7 +74,7 @@ export class PagCrearEventoComponent {
         toast.present();
         form.reset();
       },
-      error: async (err) => {
+      error: async (err:any) => {
         console.error('Error al crear evento:', err);
         const toast = await this.toastController.create({
           message: 'Error al crear el evento',

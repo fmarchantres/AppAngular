@@ -1,30 +1,42 @@
 
-
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Evento} from "../modelos/evento.model";
+
 
 @Injectable({
   providedIn: 'root'
 })
-
-
 export class EventoService {
-  private apiUrl = 'http://localhost:8080/api/eventos';
 
-  // eslint-disable-next-line @angular-eslint/prefer-inject
+  private API_URL = 'http://localhost:8080/api/eventos';
+
   constructor(private http: HttpClient) {}
 
-  crearEvento(evento: any): Observable<any> {
-      return this.http.post(this.apiUrl, evento);
+
+  //CRUD
+
+  getEventos(){
+    return this.http.get<Evento[]>(this.API_URL);
   }
 
-  obtenerEventos(): Observable<any[]> {
-      return this.http.get<any[]>(this.apiUrl);
+  getEventoPorId(id: number){
+    return this.http.get<Evento>(`${this.API_URL}/${id}`);
   }
 
-  obtenerEventoPorId(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  crearEvento(evento : any){
+    return this.http.post(`${this.API_URL}/crear`, evento);
   }
+
+  eliminarEvento(id: number){
+    return this.http.delete(`${this.API_URL}/${id}`);
+  }
+
+  modificarEvento (id: number, evento: Evento){
+    return this.http.put(`${this.API_URL}/${id}`, evento);
+  }
+  actualizarEvento(id: number, datos: any){
+    return this.http.put(`${this.API_URL}/${id}`, datos);
+  }
+
 }
-

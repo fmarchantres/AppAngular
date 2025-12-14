@@ -3,6 +3,7 @@ import {PlantillaComponent} from "../plantilla/plantilla.component";
 import {RouterLink} from "@angular/router";
 import {NgForOf, NgIf} from "@angular/common";
 import {EventoService} from "../../servicios/evento.service";
+import {Evento} from "../../modelos/evento.model";
 
 
 @Component({
@@ -15,12 +16,23 @@ import {EventoService} from "../../servicios/evento.service";
 
 export class EventosComponent  implements OnInit {
 
-  eventos: any[] = [];
+  eventos: Evento[] = [];
 
   constructor(private eventoService: EventoService) { }
 
-  ngOnInit() {
-    this.eventoService.obtenerEventos().subscribe({
+
+  ngOnInit(){
+    this.cargarEventos();
+  }
+
+  ionViewWillEnter(){
+    this.cargarEventos();
+  }
+
+
+
+  cargarEventos() {
+    this.eventoService.getEventos().subscribe({
       next:(data) => {
         this.eventos = data;
         console.log("EVENTOS RECIBIDOS:",data);

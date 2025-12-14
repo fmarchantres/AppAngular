@@ -14,6 +14,7 @@ import {PagCrearEventoComponent} from "./paginas/pag-crear-evento/pag-crear-even
 import {PagSubidaFotosComponent} from "./paginas/pag-subida-fotos/pag-subida-fotos.component";
 import {PagGaleriaComponent} from "./paginas/pag-galeria/pag-galeria.component";
 import {PagNotificacionesComponent} from "./paginas/pag-notificaciones/pag-notificaciones.component";
+import {PagModificarEventoComponent} from "./paginas/pag-modificar-evento/pag-modificar-evento.component";
 
 
 export const routes: Routes = [
@@ -87,6 +88,10 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./paginas/evento-creado-usuario/evento-creado-usuario.component')
         .then(m => m.EventoCreadoUsuarioComponent)
+  },
+  {
+    path: 'pag-modificar-evento/:id',
+    loadComponent: () => import('./paginas/pag-modificar-evento/pag-modificar-evento.component').then(m => m.PagModificarEventoComponent)
   }
 
 

@@ -29,6 +29,13 @@
       <ion-button fill="clear" [routerLink]="'/pag-crear-evento'">¿Quieres crear un evento?</ion-button>
     </div>
 
+    <!-- Cerrar sesion -->
+    <div class="cerrar-sesion">
+      <ion-button expand="block" color="danger" (click)="cerrarSesion()">
+        Cerrar sesión
+      </ion-button>
+    </div>
+
 
     <!-- Eventos destacados -->
     <div class="destacados">
@@ -57,12 +64,12 @@
       <div class="modal-detalles-container">
         <h2>{{detallesEvento.titulo}}</h2>
         <ul>
-          <li>📅 <strong>Hora:</strong> {{detallesEvento.hora}}</li>
-          <li>📍 <strong>Lugar:</strong> {{detallesEvento.lugar}}</li>
-          <li>ℹ️ <strong>Descripción:</strong> {{detallesEvento.descripcion}}</li>
-          <li>✅ <strong>Requisitos:</strong> {{detallesEvento.requisitos}}</li>
-          <li>👤 {{detallesEvento.asistentes}}</li>
-          <li>💵 {{detallesEvento.precio}}</li>
+          <li> <strong>Hora:</strong> {{detallesEvento.hora}}</li>
+          <li> <strong>Lugar:</strong> {{detallesEvento.lugar}}</li>
+          <li><strong>Descripción:</strong> {{detallesEvento.descripcion}}</li>
+          <li> <strong>Requisitos:</strong> {{detallesEvento.requisitos}}</li>
+          <li> {{detallesEvento.asistentes}}</li>
+          <li> {{detallesEvento.precio}}</li>
         </ul>
 
         <div style="text-align:center; margin-top:18px;">

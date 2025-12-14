@@ -14,7 +14,7 @@
   <div class="info-evento">
     <ul>
       <li *ngFor="let item of info">
-        {{ item.icono }} <strong>{{ item.etiqueta }}:</strong> {{ item.valor }}
+        <strong>{{ item.etiqueta }}:</strong> {{ item.valor }}
       </li>
     </ul>
   </div>
@@ -46,17 +46,18 @@
     <div class="boton-registrar">
       <ion-button
         expand="block"
-        [ngClass]="{'registrado': registrado}">
-        {{ registrado ? 'Registrado' : 'Modificar' }}
+        color="warning"
+        [routerLink]="['/pag-modificar-evento',id]">
+        Modificar
       </ion-button>
     </div>
 
     <div class="boton-registrar">
       <ion-button
         expand="block"
-
-        [ngClass]="{'registrado': registrado}">
-        {{ registrado ? 'Registrado' : 'Eliminar' }}
+        color="danger"
+        (click)="eliminarEvento()">
+        Eliminar
       </ion-button>
     </div>
   </div>

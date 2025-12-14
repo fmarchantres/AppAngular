@@ -31,7 +31,7 @@ export class EventoCreadoUsuarioComponent implements OnInit {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
 
     //LLAMAR AL SERVICIO
-    this.eventoService.obtenerEventoPorId(this.id).subscribe({
+    this.eventoService.getEventoPorId(this.id).subscribe({
       next: (data) => {
         this.evento = data;
         console.log("EVENTO CARGADO", data);

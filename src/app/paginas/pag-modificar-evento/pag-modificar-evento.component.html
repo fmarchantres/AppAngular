@@ -1,0 +1,104 @@
+
+
+
+<app-plantilla>
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Modificar Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list>
+
+    <!-- NOMBRE -->
+    <ion-item>
+      <ion-input
+        label="Nombre"
+        labelPlacement="stacked"
+        [(ngModel)]="evento.nombre"
+        name="nombre"
+        clearInput="true"
+        placeholder="Introduce el nombre">
+      </ion-input>
+    </ion-item>
+
+    <!-- DESCRIPCIÓN -->
+    <ion-item>
+      <ion-textarea
+        label="Descripción"
+        labelPlacement="stacked"
+        [(ngModel)]="evento.descripcion"
+        name="descripcion"
+        placeholder="Introduce la descripción">
+      </ion-textarea>
+    </ion-item>
+
+    <!-- FECHA -->
+    <ion-item>
+      <ion-input
+        label="Fecha"
+        labelPlacement="stacked"
+        type="datetime-local"
+        [(ngModel)]="evento.fecha"
+        name="fecha">
+      </ion-input>
+    </ion-item>
+
+    <!-- LUGAR -->
+    <ion-item>
+      <ion-input
+        label="Lugar"
+        labelPlacement="stacked"
+        [(ngModel)]="evento.lugar"
+        name="lugar"
+        clearInput="true">
+      </ion-input>
+    </ion-item>
+
+    <!-- REQUISITOS -->
+    <ion-item>
+      <ion-input
+        label="Requisitos"
+        labelPlacement="stacked"
+        [(ngModel)]="evento.requisitos"
+        name="requisitos"
+        clearInput="true">
+      </ion-input>
+    </ion-item>
+
+    <!-- PRECIO -->
+    <ion-item>
+      <ion-input
+        label="Precio (€)"
+        labelPlacement="stacked"
+        type="number"
+        [(ngModel)]="evento.precio"
+        name="precio">
+      </ion-input>
+    </ion-item>
+
+    <!-- URL IMAGEN -->
+    <ion-item>
+      <ion-input
+        label="URL de la imagen"
+        labelPlacement="stacked"
+        [(ngModel)]="evento.urlImagen"
+        name="urlImagen"
+        placeholder="https://ejemplo.com/imagen.jpg"
+        clearInput="true">
+      </ion-input>
+    </ion-item>
+
+
+  </ion-list>
+
+  <ion-button expand="block" color="primary" (click)="guardarCambios()">
+    Guardar Cambios
+  </ion-button>
+
+</ion-content>
+
+</app-plantilla>

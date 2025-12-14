@@ -69,7 +69,14 @@ export class PagLoginComponent {
       await this.mostrarToast('Usuario logueado correctamente', 'success');
 
       // Simular guardar usuario (fake)
-      localStorage.setItem('usuario', JSON.stringify({ email }));
+      localStorage.setItem(
+        'usuario',
+        JSON.stringify({
+          id: 1,
+          nombre: "Usuario Demo",
+          email: email
+        })
+      );
 
       // Redirigir
       this.router.navigate(['/pag-perfil']);

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { PlantillaComponent } from '../plantilla/plantilla.component';
 import {IonButton, IonIcon, IonModal} from '@ionic/angular/standalone';
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
+
 
 @Component({
   selector: 'app-pag-perfil',
@@ -10,7 +11,13 @@ import {RouterLink} from "@angular/router";
   standalone: true,
   imports: [PlantillaComponent, IonButton, RouterLink, IonModal, IonIcon],
 })
+
+
 export class PagPerfilComponent {
+
+  constructor(private router : Router) {}
+
+
   mostrarDetalles:boolean = false;
 
   detallesEvento = {
@@ -22,5 +29,12 @@ export class PagPerfilComponent {
     asistentes: "119 usuarios registrados.",
     precio: "Gratuito"
   };
+
+  cerrarSesion() {
+    localStorage.removeItem('usuario'); //borrar usuario logeado
+    this.router.navigate(['pag-login']);
+  }
+
+
 
 }
