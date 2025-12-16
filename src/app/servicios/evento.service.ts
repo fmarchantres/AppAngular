@@ -39,4 +39,9 @@ export class EventoService {
     return this.http.put(`${this.API_URL}/${id}`, datos);
   }
 
+  //eventos destacados
+  getEventosDestacados() {
+    return this.http.get<Evento[]>(`${this.API_URL}/destacados`);
+  }
+
 }
