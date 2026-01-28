@@ -11,26 +11,28 @@
 </ion-content>
 
 <ion-footer>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home" [routerLink]="'/pag-inicio'">
-      <img src="../../../assets/icons/home.svg" alt="Home" class="icono-footer">
-      <ion-label></ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="calendar" [routerLink]="'/pag-calendario'">
-      <img src="../../../assets/icons/calendar.svg" alt="Calendario" class="icono-footer">
-      <ion-label></ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="upload" [routerLink]="'/pag-notificaciones'">
-      <img src="../../../assets/icons/notificacion.png" alt="Fotos" class="icono-footer">
-      <ion-label></ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="phone" [routerLink]="'/pag-contacto'">
-      <img src="../../../assets/icons/phone.svg" alt="Teléfono" class="icono-footer">
-      <ion-label></ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="profile" [routerLink]="'/pag-perfil'">
-      <img src="../../../assets/icons/profile.svg" alt="Perfil" class="icono-footer">
-      <ion-label></ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
+  <ion-toolbar>
+    <div class="footer-bar">
+      <a routerLink="/pag-inicio">
+        <img src="../../../assets/icons/home.svg" class="icono-footer">
+      </a>
+
+      <a routerLink="/pag-calendario">
+        <img src="../../../assets/icons/calendar.svg" class="icono-footer">
+      </a>
+
+      <a routerLink="/pag-notificaciones">
+        <img src="../../../assets/icons/notificacion.png" class="icono-footer">
+      </a>
+
+      <a routerLink="/pag-contacto">
+        <img src="../../../assets/icons/phone.svg" class="icono-footer">
+      </a>
+
+      <a routerLink="/pag-perfil">
+        <img src="../../../assets/icons/profile.svg" class="icono-footer">
+      </a>
+    </div>
+  </ion-toolbar>
 </ion-footer>
+
