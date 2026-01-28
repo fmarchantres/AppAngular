@@ -5,15 +5,55 @@
 }
 
 
+.titulo_eventos{
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
+
 .imagen-evento {
   width: 90%;
   max-width: 400px;
+  height: 220px;
+  object-fit: cover;
   display: block;
   margin: 12px auto;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
+
+
+
+
+
+.evento-dinamico {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 12px;
+  box-shadow: none;
+
+}
+.nombre-evento {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 16px;
+  color: black;
+}
+
+
+.eventos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+
+
+
+
 
 
 

@@ -40,11 +40,17 @@
     <!-- Eventos destacados -->
     <div class="destacados">
       <p class="titulo-seccion">Eventos destacados</p>
+
       <div class="galeria">
-        <img src="../../../assets/pag-eventos/deportivo2.png" alt="EventoService 1" [routerLink]="'/evento-deportivo'">
-        <img src="../../../assets/pag-eventos/cultural3.png" alt="EventoService 2" [routerLink]="'/evento-cultural'">
+        <img
+          *ngFor="let evento of eventosDestacados"
+          [src]="evento.urlImagen"
+          [alt]="evento.nombre"
+          [routerLink]="['/evento', evento.id]"
+        >
       </div>
     </div>
+
 
     <!-- Eventos pasados -->
     <div class="eventos-pasados">
@@ -58,6 +64,13 @@
       </div>
     </div>
   </div>
+
+  <!-- Eliminar cuenta -->
+  <div class="eliminar-cuenta">
+    <p (click)="eliminarCuenta()">Eliminar cuenta</p>
+
+  </div>
+
 
   <ion-modal [isOpen]="mostrarDetalles" (didDismiss)="mostrarDetalles=false">
     <ng-template>
@@ -78,5 +91,17 @@
       </div>
     </ng-template>
   </ion-modal>
+
+  <ion-alert
+    [isOpen]="mostrarConfirmacion"
+    header="Eliminar cuenta"
+    message="¿Estás seguro que quieres eliminar la cuenta? Esta acción no se puede deshacer."
+    [buttons]="alertButtons"
+    (didDismiss)="onAlertDismiss($event)">
+  </ion-alert>
+
+
+
+
 
 </app-plantilla>

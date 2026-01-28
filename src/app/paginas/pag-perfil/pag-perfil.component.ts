@@ -1,7 +1,14 @@
 import { Component } from '@angular/core';
 import { PlantillaComponent } from '../plantilla/plantilla.component';
-import {IonButton, IonIcon, IonModal} from '@ionic/angular/standalone';
-import {Router, RouterLink} from "@angular/router";
+import { IonButton, IonIcon, IonModal, IonAlert } from '@ionic/angular/standalone';
+import { Router, RouterLink } from "@angular/router";
+import { NgForOf } from "@angular/common";
+
+import { Evento } from "../../modelos/evento.model";
+import { EventoService } from "../../servicios/evento.service";
+import { UsuarioService } from "../../servicios/usuario.service";
+import { NavController } from '@ionic/angular';
+
 
 
 @Component({
@@ -9,16 +16,50 @@ import {Router, RouterLink} from "@angular/router";
   templateUrl: './pag-perfil.component.html',
   styleUrls: ['./pag-perfil.component.scss'],
   standalone: true,
-  imports: [PlantillaComponent, IonButton, RouterLink, IonModal, IonIcon],
+  imports: [
+    PlantillaComponent,
+    IonButton,
+    RouterLink,
+    IonModal,
+    IonIcon,
+    NgForOf,
+    IonAlert
+  ],
 })
-
-
 export class PagPerfilComponent {
 
-  constructor(private router : Router) {}
+  mostrarDetalles = false;
+  mostrarConfirmacion = false;
+
+  eventosDestacados: Evento[] = [];
+
+  alertButtons = [
+    {
+      text: 'Cancelar',
+      role: 'cancel'
+    },
+    {
+      text: 'Eliminar',
+      role: 'destructive'
+    }
+  ];
 
 
-  mostrarDetalles:boolean = false;
+  constructor(
+    private router: Router,
+    private eventoService: EventoService,
+    private usuarioService: UsuarioService,
+    private navCtrl: NavController
+
+  ) {}
+
+  ngOnInit() {
+    this.eventoService.getEventosDestacados()
+      .subscribe({
+        next: eventos => this.eventosDestacados = eventos,
+        error: err => console.error(err)
+      });
+  }
 
   detallesEvento = {
     titulo: "Torneo Deportivo",
@@ -31,8 +72,38 @@ export class PagPerfilComponent {
   };
 
   cerrarSesion() {
-    localStorage.removeItem('usuario'); //borrar usuario logeado
+    localStorage.clear();
     this.router.navigate(['pag-login']);
+  }
+
+  eliminarCuenta() {
+    this.mostrarConfirmacion = true;
+  }
+
+  confirmarEliminacion() {
+    const usuario = JSON.parse(localStorage.getItem('usuario')!);
+    const idUsuario = usuario.id;
+
+    this.usuarioService.eliminarUsuario(idUsuario)
+      .subscribe({
+        next: () => {
+          localStorage.clear();
+
+          window.location.href = '/pag-registro';
+        },
+        error: err => console.error(err)
+      });
+  }
+
+
+
+
+  onAlertDismiss(event: any) {
+    if (event.detail.role === 'destructive') {
+      setTimeout(() => {
+        this.confirmarEliminacion();
+      }, 0);
+    }
   }
 
 

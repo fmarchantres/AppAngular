@@ -26,8 +26,12 @@ export class UsuarioService {
 
   //LOGIN DEL USUARIO
   login(email: string, password: string) {
-    return this.http.post<any>(`${this.apiUrl}/login`, { email, password });
+    return this.http.get(
+      `http://localhost:8080/api/usuarios/login?email=${email}&password=${password}`
+    );
   }
+
+
 
 
   //REGISTRO DEL USUARIO
@@ -44,9 +48,10 @@ export class UsuarioService {
     return this.http.get<Usuario>(`${this.apiUrl}/${id}`);
   }
 
-  eliminar(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  eliminarUsuario(id: number) {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
 
 
 }
