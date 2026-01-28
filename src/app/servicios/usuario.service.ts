@@ -26,10 +26,12 @@ export class UsuarioService {
 
   //LOGIN DEL USUARIO
   login(email: string, password: string) {
-    return this.http.get(
-      `http://localhost:8080/api/usuarios/login?email=${email}&password=${password}`
+    return this.http.post<Usuario>(
+      `${this.apiUrl}/login`,
+      { email, password }
     );
   }
+
 
 
 
