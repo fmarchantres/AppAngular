@@ -2,6 +2,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Evento} from "../modelos/evento.model";
+import { environment } from 'src/environments/environment';
+
 
 
 @Injectable({
@@ -9,7 +11,9 @@ import {Evento} from "../modelos/evento.model";
 })
 export class EventoService {
 
-  private API_URL = 'http://localhost:8080/api/eventos';
+  //private API_URL = 'http://localhost:8080/api/eventos';
+  private API_URL = `${environment.apiUrl}/api/eventos`;
+
 
   constructor(private http: HttpClient) {}
 

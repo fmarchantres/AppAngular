@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 
 export interface Usuario {
   id?: number;
@@ -16,7 +18,8 @@ export interface Usuario {
 })
 export class UsuarioService {
 
-  private apiUrl = 'http://localhost:8080/api/usuarios'; // URL del backend
+  private apiUrl = `${environment.apiUrl}/api/usuarios`;
+  //private apiUrl = 'http://localhost:8080/api/usuarios'; // URL del backend
 
   // eslint-disable-next-line @angular-eslint/prefer-inject
   constructor(private http: HttpClient) {}
