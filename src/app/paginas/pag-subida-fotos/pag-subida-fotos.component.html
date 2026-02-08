@@ -17,8 +17,6 @@
     </ion-card-content>
   </ion-card>
 
-
-
   <ion-card class="upload-area">
     <ion-card-content>
       <img src="../../../assets/icons/camara.png" class="icono-camera">
@@ -26,15 +24,32 @@
       <p class="texto-upload">Arrastra las fotos aquí o haz clic para seleccionar</p>
       <p class="info">Máximo 10 fotos, 5MB cada una</p>
 
-      <input type="file" multiple hidden #inputFile (change)="seleccionarFotos($event)">
-      <ion-button fill="clear" (click)="inputFile.click()">Seleccionar fotos</ion-button>
+      <input
+        type="file"
+        multiple
+        hidden
+        #inputFile
+        (change)="seleccionarFotos($event)">
+
+      <div class="botones-upload">
+        <ion-button fill="clear" (click)="inputFile.click()">
+          Seleccionar fotos
+        </ion-button>
+
+        <ion-button fill="clear" (click)="abrirCamara()">
+          Abrir cámara
+        </ion-button>
+      </div>
     </ion-card-content>
   </ion-card>
 
   <ion-card class="campo-card">
     <ion-card-content>
       <ion-label position="stacked">Descripción (opcional)</ion-label>
-      <ion-input placeholder="Comparte detalles sobre las fotos..." [(ngModel)]="descripcion"></ion-input>
+      <ion-input
+        placeholder="Comparte detalles sobre las fotos..."
+        [(ngModel)]="descripcion">
+      </ion-input>
     </ion-card-content>
   </ion-card>
 
@@ -46,6 +61,5 @@
       Subir fotos
     </ion-button>
   </div>
-
 
 </app-plantilla>
