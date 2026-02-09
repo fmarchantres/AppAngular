@@ -2,46 +2,19 @@
 
   <div class="ion-text-center ion-padding">
     <p class="titulo">Galería</p>
+    <ion-button (click)="capturarFoto()" fill="clear" size="small">
+      <ion-icon name="camera" slot="start"></ion-icon>
+      Hacer foto
+    </ion-button>
   </div>
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto1.jpg" class="foto-galeria" (click)="abrirFoto(0)">
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto2.jpg" class="foto-galeria" (click)="abrirFoto(1)">
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto3.jpg" class="foto-galeria" (click)="abrirFoto(2)">
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto4.jpg" class="foto-galeria" (click)="abrirFoto(3)">
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto5.jpg" class="foto-galeria" (click)="abrirFoto(4)">
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto6.jpg" class="foto-galeria" (click)="abrirFoto(5)">
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto7.jpg" class="foto-galeria" (click)="abrirFoto(6)">
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto8.jpg" class="foto-galeria" (click)="abrirFoto(7)">
+      <ion-col size="6" *ngFor="let foto of fotos; let i = index">
+        <img [src]="foto" class="foto-galeria" (click)="abrirFoto(i)">
       </ion-col>
     </ion-row>
   </ion-grid>
-
 
   <div class="boton-subir">
     <ion-button
@@ -51,26 +24,20 @@
     </ion-button>
   </div>
 
-
-
-  <!-- MODAL FINAL -->
   <ion-modal [isOpen]="mostrarModal" (didDismiss)="cerrarModal()">
     <ng-template>
       <div class="visor-modal">
 
         <img [src]="fotoSeleccionada" class="foto-grande">
 
-        <!-- CERRAR -->
         <img src="../../../assets/icons/cerrar.png"
              class="btn-cerrar"
              (click)="cerrarModal()">
 
-        <!-- FLECHA IZQUIERDA -->
         <img src="../../../assets/icons/flecha-izquierda.png"
              class="flecha-izq"
              (click)="fotoAnterior()">
 
-        <!-- FLECHA DERECHA -->
         <img src="../../../assets/icons/flecha-derecha.png"
              class="flecha-der"
              (click)="fotoSiguiente()">

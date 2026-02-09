@@ -9,7 +9,10 @@
     <ion-card-content>
       <ion-label position="stacked">Selecciona un evento</ion-label>
 
-      <ion-select placeholder="Lista de eventos" name="evento" [(ngModel)]="eventoSeleccionado">
+      <ion-select
+        placeholder="Lista de eventos"
+        name="evento"
+        [(ngModel)]="eventoSeleccionado">
         <ion-select-option value="ciencias">Feria de ciencias</ion-select-option>
         <ion-select-option value="cultural">Festival Cultural</ion-select-option>
         <ion-select-option value="deportivo">Torneo deportivo</ion-select-option>
@@ -17,29 +20,17 @@
     </ion-card-content>
   </ion-card>
 
+  <!-- ZONA DE CÁMARA -->
   <ion-card class="upload-area">
     <ion-card-content>
       <img src="../../../assets/icons/camara.png" class="icono-camera">
 
-      <p class="texto-upload">Arrastra las fotos aquí o haz clic para seleccionar</p>
-      <p class="info">Máximo 10 fotos, 5MB cada una</p>
+      <p class="texto-upload">Pulsa para hacer una foto</p>
+      <p class="info">La imagen se guardará en el dispositivo</p>
 
-      <input
-        type="file"
-        multiple
-        hidden
-        #inputFile
-        (change)="seleccionarFotos($event)">
-
-      <div class="botones-upload">
-        <ion-button fill="clear" (click)="inputFile.click()">
-          Seleccionar fotos
-        </ion-button>
-
-        <ion-button fill="clear" (click)="abrirCamara()">
-          Abrir cámara
-        </ion-button>
-      </div>
+      <ion-button fill="clear" (click)="abrirCamara()">
+        Abrir cámara
+      </ion-button>
     </ion-card-content>
   </ion-card>
 
