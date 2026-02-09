@@ -24,8 +24,8 @@ export class PagGaleriaComponent implements OnInit {
   fotos: any[] = []; // Empezamos con el array vacío
   idEvento: number = 0;
   // Cambia esto por tu URL real de Render cuando hagas el deploy
-  private API_URL = 'http://localhost:8080/api/fotos';
-  private SERVER_BASE = 'http://localhost:8080';
+  private API_URL = 'https://javaspringbooteventosescolares-1.onrender.com/api/fotos';
+  private SERVER_BASE = 'https://javaspringbooteventosescolares-1.onrender.com';
 
   mostrarModal: boolean = false;
   indexActual: number = 0;
