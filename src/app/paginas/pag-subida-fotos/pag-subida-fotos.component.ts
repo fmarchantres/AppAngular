@@ -3,6 +3,8 @@ import { PlantillaComponent } from "../plantilla/plantilla.component";
 import { FormsModule } from "@angular/forms";
 import { IonSelect, IonSelectOption, IonCard, IonCardContent, IonLabel, IonInput, IonButton } from "@ionic/angular/standalone";
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { GaleriaService } from '../../servicios/galeria.service';
+
 
 
 @Component({
@@ -18,17 +20,20 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
     IonLabel, IonInput, IonButton
   ]
 })
+
 export class PagSubidaFotosComponent {
 
   eventoSeleccionado: string = '';
   descripcion: string = '';
   fotos: File[] = [];
 
-  seleccionarFotos(event:any){
+  constructor(private galeriaService: GaleriaService) {}
+
+  seleccionarFotos(event: any) {
     this.fotos = [...event.target.files];
   }
 
-  subirFotos(){
+  subirFotos() {
     console.log("EventoService:", this.eventoSeleccionado);
     console.log("Descripción:", this.descripcion);
     console.log("Fotos seleccionadas:", this.fotos);
@@ -52,9 +57,30 @@ export class PagSubidaFotosComponent {
         { type: blob.type }
       );
 
-      this.fotos.push(file);
+      // 🔥 AQUÍ LLAMAMOS AL PASO 2
+      this.subirFoto(file);
     }
   }
 
+  //  PASO 2 → AQUÍ EXACTAMENTE
+  private async subirFoto(file: File) {
+    const formData = new FormData();
+    formData.append('file', file);
 
+    fetch('https://javaspringbooteventosescolares-1.onrender.com/api/images/upload', {
+      method: 'POST',
+      body: formData
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log('Imagen subida:', data.imageUrl);
+
+        // 👉 guardamos la URL
+        this.galeriaService.agregarImagen(data.imageUrl);
+      })
+      .catch(err => {
+        console.error('Error subiendo imagen', err);
+      });
+  }
 }
+

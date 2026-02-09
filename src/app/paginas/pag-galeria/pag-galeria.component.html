@@ -4,43 +4,58 @@
     <p class="titulo">Galería</p>
   </div>
 
+<!--  <ion-grid>-->
+<!--    <ion-row>-->
+<!--      <ion-col size="6">-->
+<!--        <img src="../../../assets/fotos/foto1.jpg" class="foto-galeria" (click)="abrirFoto(0)">-->
+<!--      </ion-col>-->
+<!--      <ion-col size="6">-->
+<!--        <img src="../../../assets/fotos/foto2.jpg" class="foto-galeria" (click)="abrirFoto(1)">-->
+<!--      </ion-col>-->
+<!--    </ion-row>-->
+
+<!--    <ion-row>-->
+<!--      <ion-col size="6">-->
+<!--        <img src="../../../assets/fotos/foto3.jpg" class="foto-galeria" (click)="abrirFoto(2)">-->
+<!--      </ion-col>-->
+<!--      <ion-col size="6">-->
+<!--        <img src="../../../assets/fotos/foto4.jpg" class="foto-galeria" (click)="abrirFoto(3)">-->
+<!--      </ion-col>-->
+<!--    </ion-row>-->
+
+<!--    <ion-row>-->
+<!--      <ion-col size="6">-->
+<!--        <img src="../../../assets/fotos/foto5.jpg" class="foto-galeria" (click)="abrirFoto(4)">-->
+<!--      </ion-col>-->
+<!--      <ion-col size="6">-->
+<!--        <img src="../../../assets/fotos/foto6.jpg" class="foto-galeria" (click)="abrirFoto(5)">-->
+<!--      </ion-col>-->
+<!--    </ion-row>-->
+
+<!--    <ion-row>-->
+<!--      <ion-col size="6">-->
+<!--        <img src="../../../assets/fotos/foto7.jpg" class="foto-galeria" (click)="abrirFoto(6)">-->
+<!--      </ion-col>-->
+<!--      <ion-col size="6">-->
+<!--        <img src="../../../assets/fotos/foto8.jpg" class="foto-galeria" (click)="abrirFoto(7)">-->
+<!--      </ion-col>-->
+<!--    </ion-row>-->
+<!--  </ion-grid>-->
+
   <ion-grid>
     <ion-row>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto1.jpg" class="foto-galeria" (click)="abrirFoto(0)">
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto2.jpg" class="foto-galeria" (click)="abrirFoto(1)">
-      </ion-col>
-    </ion-row>
+      <ion-col
+        size="6"
+        *ngFor="let foto of fotos; let i = index">
 
-    <ion-row>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto3.jpg" class="foto-galeria" (click)="abrirFoto(2)">
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto4.jpg" class="foto-galeria" (click)="abrirFoto(3)">
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto5.jpg" class="foto-galeria" (click)="abrirFoto(4)">
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto6.jpg" class="foto-galeria" (click)="abrirFoto(5)">
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto7.jpg" class="foto-galeria" (click)="abrirFoto(6)">
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/fotos/foto8.jpg" class="foto-galeria" (click)="abrirFoto(7)">
+        <img
+          [src]="foto"
+          class="foto-galeria"
+          (click)="abrirFoto(i)">
       </ion-col>
     </ion-row>
   </ion-grid>
+
 
 
   <div class="boton-subir">
